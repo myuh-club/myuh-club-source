@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Image, Header } from 'semantic-ui-react';
+import { Grid, Image, Icon, Header } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -10,13 +10,13 @@ class Landing extends React.Component {
         <div className='myuhclub-landing-background'>
           <Grid verticalAlign='middle' textAlign='center' columns={2}>
             <Grid.Column className='myuhclub-landing-background'>
-              <p>welcome</p>
+              <Header as='h3' inverted><Icon name='search' size='huge' inverted/>Search for Your Club</Header>
+              <Header as='h3' inverted><Icon name='star' size='huge' inverted/>Add to Your Favorite</Header>
+              <Header as='h3' inverted><Icon name='users' size='huge' inverted/>Expand Your Community</Header>
             </Grid.Column>
 
             <Grid.Column style={divStyle}>
-              <Grid.Row>
-                <p style={headerStyle}>MyUH Club</p>
-              </Grid.Row>
+              <Header size='huge' inverted>MyUH Club</Header>
               <Grid.Column>
                 <Image size='small' circular src="/images/meteor-logo.png"/>
               </Grid.Column>
