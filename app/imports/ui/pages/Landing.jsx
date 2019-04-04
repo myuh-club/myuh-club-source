@@ -9,24 +9,23 @@ class Landing extends React.Component {
     return (
         <div className='myuhclub-landing-background'>
           <Grid verticalAlign='middle' textAlign='center' columns={2}>
-            <Grid.Column>
+            <Grid.Column className='myuhclub-landing-background'>
               <p>welcome</p>
             </Grid.Column>
-            <div style={divStyle}>
-              <Grid.Column>
-                <Grid.Row>
-                  <p style={headerStyle}>MyUH Club</p>
-                </Grid.Row>
-                <Grid.Column>
-                  <Image size='small' circular src="/images/meteor-logo.png"/>
-                </Grid.Column>
 
-                <Grid.Column>
-                  <h1>Welcome to this template</h1>
-                  <p>Now get to work and modify this app!</p>
-                </Grid.Column>
+            <Grid.Column style={divStyle}>
+              <Grid.Row>
+                <p style={headerStyle}>MyUH Club</p>
+              </Grid.Row>
+              <Grid.Column>
+                <Image size='small' circular src="/images/meteor-logo.png"/>
               </Grid.Column>
-            </div>
+
+              <Grid.Column>
+                <h1>Welcome to this template</h1>
+                <p>Now get to work and modify this app!</p>
+              </Grid.Column>
+            </Grid.Column>
 
           </Grid>
         </div>
