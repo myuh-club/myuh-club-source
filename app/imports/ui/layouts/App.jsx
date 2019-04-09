@@ -10,6 +10,7 @@ import Landing from '../pages/Landing';
 import ListStuff from '../pages/ListStuff';
 import ClubControlAdmin from '../pages/ClubControlAdmin';
 import ClubEditAdmin from '../pages/ClubEditAdmin';
+import ReportsAdmin from '../pages/ReportsAdmin';
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
@@ -33,6 +34,7 @@ class App extends React.Component {
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <AdminProtectedRoute path="/aE" component={ClubEditAdmin}/>
               <AdminProtectedRoute path="/aD" component={ClubControlAdmin}/>
+              <AdminProtectedRoute path="/aR" component={ReportsAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

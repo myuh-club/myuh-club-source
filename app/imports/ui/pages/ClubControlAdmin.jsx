@@ -70,6 +70,7 @@ class ClubControlAdmin extends React.Component {
               </AutoForm>
             </Grid.Column>
           </Grid>
+          <Header as="h2" textAlign="center">Delete Club</Header>
           <Segment>
             <Item.Group divided>
               {this.props.clubs.map((club, index) => <ClubADAdmin key={index} club={club}/>)}
@@ -88,7 +89,7 @@ ClubControlAdmin.propTypes = {
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
-  // Get access to Stuff documents.
+  // Get access to Club documents.
   const subscription = Meteor.subscribe('ClubAdmin');
   return {
     clubs: Clubs.find({}).fetch(),
