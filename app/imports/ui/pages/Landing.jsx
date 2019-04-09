@@ -24,13 +24,13 @@ class Landing extends React.Component {
               <List>
                 <List.Item>
                   <Button.Group>
-                    <Button color='teal' basic>Sign In</Button>
+                    <Button color='teal'>Sign In</Button>
                     <Button.Or/>
-                    <Button positive basic>Sign Up</Button>
+                    <Button positive>Sign Up</Button>
                   </Button.Group>
                 </List.Item>
                 <List.Item>
-                  <Button basic color='black' size='huge'>
+                  <Button color='black' size='huge'>
                     <Icon name='search'/>
                     Search
                   </Button>
