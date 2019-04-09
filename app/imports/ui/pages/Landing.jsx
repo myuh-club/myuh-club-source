@@ -1,10 +1,10 @@
 import React from 'react';
-import { Grid, Image, Icon, Header } from 'semantic-ui-react';
+import { Grid, Image, Icon, Header, Button, Container } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
-    const headerStyle = { color: "white", fontSize: "4rem" };
+    // const headerStyle = { color: "white", fontSize: "4rem" };
     const divStyle = { backgroundColor: "#006400" };
     return (
         <div className='myuhclub-landing-background'>
@@ -17,9 +17,28 @@ class Landing extends React.Component {
 
             <Grid.Column style={divStyle}>
               <Header size='huge' inverted>MyUH Club</Header>
-              <Grid.Column>
-                <Image size='small' circular src="/images/meteor-logo.png"/>
-              </Grid.Column>
+
+              <Grid.Row>
+                <Header as='h3' inverted><Icon name='search' size='huge' inverted/>Search for Your Club</Header>
+                <Header as='h3' inverted><Icon name='star' size='huge' inverted/>Add to Your Favorite</Header>
+                <Header as='h3' inverted><Icon name='users' size='huge' inverted/>Expand Your Community</Header>
+              </Grid.Row>
+
+              <Grid.Row>
+                <Button.Group>
+                  <Button color='teal' basic>Sign In</Button>
+                  <Button.Or/>
+                  <Button positive basic>Sign Up</Button>
+                </Button.Group>
+
+              </Grid.Row>
+
+              <Grid.Row>
+                <Button basic color='black' size='huge'>
+                  <Icon name='search'/>
+                  Search
+                </Button>
+              </Grid.Row>
 
               <Grid.Column>
                 <h1>Welcome to this template</h1>
