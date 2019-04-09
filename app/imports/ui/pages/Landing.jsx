@@ -1,20 +1,19 @@
 import React from 'react';
-import { Grid, Image, Icon, Header, Button, Container, List } from 'semantic-ui-react';
+import { Grid, Icon, Header, Button, List } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
-    const divStyle = { backgroundColor: "#006400", opacity: "0.8", borderRadius: "15px" };
-    const temp = {padding: "2rem"};
+    const padding = { padding: "2rem" };
+    const opacity = { opacity: "1" };
     return (
-        <div className='myuhclub-landing-background' style={temp}>
+        <div className='myuhclub-landing-background' style={padding}>
           <Grid verticalAlign='middle' textAlign='center' columns={2}>
             <Grid.Column>
               <Header size='huge' inverted>MyUH Club</Header>
             </Grid.Column>
 
-            <Grid.Column style={divStyle}>
-
+            <Grid.Column className='myuhclub-landing-background-right' style={opacity}>
               <Grid.Row>
                 <Header as='h3' inverted><Icon name='search' size='huge' inverted/>Search for Your Club</Header>
                 <Header as='h3' inverted><Icon name='star' size='huge' inverted/>Add to Your Favorite</Header>
@@ -36,6 +35,7 @@ class Landing extends React.Component {
                   </Button>
                 </List.Item>
               </List>
+
             </Grid.Column>
           </Grid>
         </div>
