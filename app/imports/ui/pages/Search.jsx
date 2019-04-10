@@ -71,13 +71,16 @@ class Search extends React.Component {
     );
     console.log(checked);
     console.log(checkedObjects);
-    const contents = Clubs.find({}).fetch();
-    Meteor.subscribe('Clubs').ready() ? contents.map((content) => console.log(content)) : console.log('Clubs not ready');
+    const filter = [];
+    checkedObjects.map((obj) => filter.push(obj));
+    const contents = Clubs.find({$or: filter}).fetch();
+    console.log(contents);
+    this.setState({list: Clubs.find({$or: filter}).fetch()});
+    console.log(this.state.list);
   }
 
   render() {
-    //return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
-    return this.renderPage();
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
 
   renderPage() {
@@ -208,13 +211,23 @@ class Search extends React.Component {
             </Grid.Column>
           </Grid>
           <hr/>
-          <Grid verticalAlign='middle' textAlign='center' columns={4} container>
+          <Grid verticalAlign='middle' textAlign='center' columns={4} padded container>
             <Card.Group>
-              {this.props.clubs.map((club) => console.log(club))}
+              {this.state.list.map((club) => <Club
+                key={club._id}
+                club={club}
+              />)}
             </Card.Group>
           </Grid>
         </Container>
     );
+  }
+  constructor(props) {
+    super(props);
+    this.state = {
+      list: []
+    };
+    this.currentlyChecked = this.currentlyChecked.bind(this);
   }
 }
 
