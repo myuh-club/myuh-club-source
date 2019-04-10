@@ -1,6 +1,6 @@
 import React from 'react';
 import { Reports, ReportSchema } from '/imports/api/report/report';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Grid, Segment, Header, Icon, Container } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
@@ -41,21 +41,27 @@ class ReportProblem extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Report A Problem</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ReportSchema} onSubmit={this.submit}>
-              <Segment>
-                <TextField name='title'/>
-                <LongTextField name='message'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-                <HiddenField name='owner' value='fakeuser@foo.com'/>
-                <HiddenField name='time' value={new Date()}/>
-              </Segment>
-            </AutoForm>
-          </Grid.Column>
-        </Grid>
+        <Container>
+          <Header as="h1" textAlign="center" icon>
+            <Icon name="exclamation" circular/> Report A Problem
+          </Header>
+          <Grid container centered>
+            <Grid.Column>
+              <AutoForm ref={(ref) => {
+                this.formRef = ref;
+              }} schema={ReportSchema} onSubmit={this.submit}>
+                <Segment>
+                  <TextField name='title'/>
+                  <LongTextField name='message'/>
+                  <SubmitField value='Submit'/>
+                  <ErrorsField/>
+                  <HiddenField name='owner' value='fakeuser@foo.com'/>
+                  <HiddenField name='time' value={new Date()}/>
+                </Segment>
+              </AutoForm>
+            </Grid.Column>
+          </Grid>
+        </Container>
     );
   }
 }
