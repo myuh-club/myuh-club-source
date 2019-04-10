@@ -13,6 +13,7 @@
   "defaultClubs": [
     {
       "name": "AECT-Hawaii",
+      "type": "Academic/Professional",
       "quantity": 10,
       "owner": "john@foo.com",
       "image": "https://philipmjohnson.github.io/images/philip2.jpeg",
@@ -22,6 +23,7 @@
     },
     {
       "name": "AAUW UHM",
+      "type": "Recreational",
       "quantity": 30,
       "owner": "john@foo.com",
       "image": "https://philipmjohnson.github.io/images/philip2.jpeg",
