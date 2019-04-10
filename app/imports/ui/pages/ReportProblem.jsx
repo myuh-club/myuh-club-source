@@ -4,8 +4,6 @@ import { Grid, Segment, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
-import NumField from 'uniforms-semantic/NumField';
-import SelectField from 'uniforms-semantic/SelectField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
@@ -26,10 +24,9 @@ class ReportProblem extends React.Component {
   /** Notify the user of the results of the submit. If successful, clear the form. */
   insertCallback(error) {
     if (error) {
-      console.log(error);
-      Bert.alert({ type: 'danger', message: `Report was successfully sent to Admin.: ${error.message}` });
+      Bert.alert({ type: 'danger', message: `Error: Message was not sent properly: ${error.message}` });
     } else {
-      Bert.alert({ type: 'success', message: 'Error: Message was not sent properly.' });
+      Bert.alert({ type: 'success', message: 'Report was successfully sent to Admin.' });
       this.formRef.reset();
     }
   }
