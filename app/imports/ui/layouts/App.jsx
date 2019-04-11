@@ -14,6 +14,7 @@ import ReportsAdmin from '../pages/ReportsAdmin';
 import AboutUsList from '../pages/AboutUsList';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import StudentHomepage from '../pages/StudentHomepage';
+import Search from '../pages/Search';
 
 import EditStuff from '../pages/EditStuff';
 import AddStuff from '../pages/AddStuff';
@@ -42,6 +43,7 @@ class App extends React.Component {
               <ProtectedRoute path="/list" component={AboutUsList}/>
               <ProtectedRoute path="/add" component={StudentHomepage}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+              <ProtectedRoute path="/search" component={Search}/>
               <AdminProtectedRoute path="/aE" component={ClubEditAdmin}/>
               <AdminProtectedRoute path="/aD" component={ClubControlAdmin}/>
               <AdminProtectedRoute path="/aR" component={ReportsAdmin}/>
