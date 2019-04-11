@@ -5,7 +5,7 @@ import { withRouter, Link } from 'react-router-dom';
 import people from '../pages/AboutUsList'
 
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Taken from ListStuff */
 class AboutUs extends React.Component {
   render() {
     return (
