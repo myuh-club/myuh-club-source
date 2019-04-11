@@ -14,8 +14,10 @@ import EditClub from '../pages/EditClub';
 import ListClub from '../pages/ListClub';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
+import Signup from '../pages/Signup'
 import Register from '../pages/Register';
 import Signout from '../pages/Signout';
+import LogIn from '../pages/LogIn';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -27,7 +29,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
-              <Route path="/signup" component={Register}/>
+              <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/list" component={AboutUsList}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/eC" component={ListClub}/>
