@@ -5,12 +5,13 @@ import { withRouter, Link } from 'react-router-dom';
 import people from '../pages/AboutUsList'
 
 
-/** Taken from ListStuff */
+/** Taken from Contacts */
 class AboutUs extends React.Component {
   render() {
     return (
 
         <div>
+          <Card.Group>
                 <Card href = {this.props.people.portfolio}>
                   <Card.Content>
                     <Image floated='left' size='large' src={this.props.people.image} />
@@ -27,6 +28,7 @@ class AboutUs extends React.Component {
 
                   </Card.Content>
                 </Card>
+          </Card.Group>
 
         </div>
     );

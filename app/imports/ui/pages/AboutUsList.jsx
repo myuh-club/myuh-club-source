@@ -37,12 +37,14 @@ class AboutUsList extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <Container>
+        <div className='myuhclub-landing-background'>
+          <div className='myuhclub-landing-background-right'>
           <Header as="h2" textAlign="center" inverted>About the Developers</Header>
           <Card.Group centered items ={this.contacts}>
             {this.people.map((people, index) => <AboutUs key = {index} people = {people}/> )}
           </Card.Group>
-        </Container>
+          </div>
+        </div>
     );
   }
 }

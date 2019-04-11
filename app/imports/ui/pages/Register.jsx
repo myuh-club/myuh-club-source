@@ -7,7 +7,7 @@ export default class Register extends React.Component{
 
   render(){
     return(
-        <div className="myuhclub-landing-background-right">
+        <div>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
             <Container inverted>
