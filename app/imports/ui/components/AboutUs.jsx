@@ -13,7 +13,7 @@ class AboutUs extends React.Component {
         <div>
                 <Card href = {this.props.people.portfolio}>
                   <Card.Content>
-                    <Image floated='centered' size='large' src={this.props.people.image} />
+                    <Image floated='left' size='large' src={this.props.people.image} />
                     <Card.Header>
                       {this.props.people.firstName}
                       {this.props.people.lastName}
