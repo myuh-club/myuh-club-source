@@ -81,6 +81,7 @@ export default class Signup extends React.Component {
             </Grid.Column>
           </Grid>
         </Container>
+
     );
   }
 }
