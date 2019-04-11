@@ -1,9 +1,15 @@
 {
   "defaultAccounts": [
+
     {
       "email": "admin@foo.com",
       "password": "changeme",
       "role": "admin"
+    },
+    {
+      "email": "org@foo.com",
+      "password": "changeme",
+      "role": "organizer"
     },
     {
       "email": "john@foo.com",

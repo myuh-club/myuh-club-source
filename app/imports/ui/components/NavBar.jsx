@@ -13,14 +13,22 @@ class NavBar extends React.Component {
     return (
       <Menu style={menuStyle} attached="top" borderless inverted>
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
-          <Header inverted as='h1'>meteor-application-template</Header>
+          <Header inverted as='h1'>MyUH Club</Header>
         </Menu.Item>
         {this.props.currentUser ? (
+
             [<Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Stuff</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Stuff</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/reportproblem" key='list'>
-                <Icon name='exclamation'/>Report A Problem</Menu.Item>
-            ]
+                <Icon name='exclamation'/>Report A Problem
+              </Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Dashboard</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>About the Developers</Menu.Item>,
+              ]
+        ) : ''}
+        {Roles.userIsInRole(Meteor.userId(), 'organizer') ? (
+            <Menu.Item as={NavLink} activeClassName="active" exact to="/eC" key='eC'>Edit Club</Menu.Item>
+
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
             <Menu.Item as={NavLink} activeClassName="active" exact to="/admin" key='admin'>Admin</Menu.Item>
@@ -29,8 +37,8 @@ class NavBar extends React.Component {
           {this.props.currentUser === '' ? (
             <Dropdown text="Login" pointing="top right" icon={'user'}>
               <Dropdown.Menu>
-                <Dropdown.Item icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
-                <Dropdown.Item icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+                <Dropdown.Item icon="user" text="Log In" as={NavLink} exact to="/signin"/>
+                <Dropdown.Item icon="add user" text="Register" as={NavLink} exact to="/signup"/>
               </Dropdown.Menu>
             </Dropdown>
           ) : (
