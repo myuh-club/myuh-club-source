@@ -1,5 +1,8 @@
 import React from 'react';
 import { Grid, Icon, Header, Button, List } from 'semantic-ui-react';
+import { NavLink } from 'react-router-dom';
+import { Menu } from 'semantic-ui-react/dist/commonjs/collections/Menu';
+
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
@@ -21,13 +24,13 @@ class Landing extends React.Component {
               <List>
                 <List.Item>
                   <Button.Group>
-                    <Button color='teal'>Sign In</Button>
+                    <Button as={NavLink} activeClassName="active" exact to="signin" key='signin' color='teal'>Sign In</Button>
                     <Button.Or/>
-                    <Button positive>Sign Up</Button>
+                    <Button as={NavLink} activeClassName="active" exact to="signup" key='signin' positive >Sign Up</Button>
                   </Button.Group>
                 </List.Item>
                 <List.Item>
-                  <Button color='black' size='huge'>
+                  <Button as={NavLink} activeClassName="active" exact to="search" key='search' color='black' size='huge'>
                     <Icon name='search'/>
                     Search
                   </Button>
@@ -41,5 +44,7 @@ class Landing extends React.Component {
     );
   }
 }
+
+
 
 export default Landing;
