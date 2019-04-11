@@ -13,6 +13,7 @@ import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
+import Signup from '../pages/Signup'
 import Register from '../pages/Register';
 import Signout from '../pages/Signout';
 import LogIn from '../pages/LogIn';
@@ -26,8 +27,8 @@ class App extends React.Component {
             <NavBar/>
             <Switch>
               <Route exact path="/" component={Landing}/>
-              <Route path="/signin" component={LogIn}/>
-              <Route path="/signup" component={Register}/>
+              <Route path="/signin" component={Signin}/>
+              <Route path="/signup" component={Signup}/>
               <ProtectedRoute path="/list" component={AboutUsList}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
