@@ -12,19 +12,28 @@ class NavBar extends React.Component {
     const menuStyle = { marginBottom: '10px' };
     return (
         <Menu style={menuStyle} attached="top" borderless inverted>
-          <Menu.Item as={NavLink} activeClassName="" exact to="/">
-            <Header inverted as='h1'>MyUH Club</Header>
-          </Menu.Item>
+          {this.props.currentUser ? (
+              [
+                <Menu.Item as={NavLink} activeClassName="" exact to="/homepage" key='homepage'>
+                  <Header inverted as='h1'>MyUH Club</Header>
+                </Menu.Item>
+              ]
+          ) : (
+              [
+                <Menu.Item as={NavLink} activeClassName="" exact to="/" key='landing'>
+                  <Header inverted as='h1'>MyUH Club</Header>
+                </Menu.Item>
+              ]
+          )}
           {this.props.currentUser ? (
 
               [
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Dashboard</Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>About the
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/developers" key='developers'>About the
                   Developers</Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/reportproblem" key='list'>
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/reportproblem" key='reportproblem'>
                   <Icon name='exclamation'/>Report A Problem
                 </Menu.Item>,
-                <Menu.Item as={NavLink} activeClassName="active" exact to="/search" key='list'>
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/search" key='search'>
                   <Icon name='search'/>Search
                 </Menu.Item>
               ]
