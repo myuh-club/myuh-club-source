@@ -5,7 +5,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Clubs } from '/imports/api/club/club';
 import Club from '/imports/ui/components/Club';
-
+import { Favorites } from '/imports/api/favorite/favorite';
 
 /** A simple static component to render some text for the search page. */
 class Search extends React.Component {
@@ -104,8 +104,9 @@ class Search extends React.Component {
                       <Checkbox
                           id={'Academic/Professional'}
                           defaultChecked={true}
+                          padded
                           toggle
-                          label={'Academic/Professional'}
+                          label={'Academic &\nProfessional'}
                       />
                     </Table.Cell>
                     <Table.Cell>
@@ -113,7 +114,7 @@ class Search extends React.Component {
                           id={'Ethnic/Cultural'}
                           defaultChecked={true}
                           toggle
-                          label={'Ethnic/Cultural'}
+                          label={'Ethnic &\nCultural'}
                       />
                     </Table.Cell>
                     <Table.Cell>
@@ -129,7 +130,7 @@ class Search extends React.Component {
                           id={'Fraternity/Sorority'}
                           defaultChecked={true}
                           toggle
-                          label={'Fraternity/Sorority'}
+                          label={'Fraternity &\nSorority'}
                       />
                     </Table.Cell>
                   </Table.Row>
@@ -173,7 +174,7 @@ class Search extends React.Component {
                           id={'Religious/Spiritual'}
                           defaultChecked={true}
                           toggle
-                          label={'Religious/Spiritual'}
+                          label={'Religious &\nSpiritual'}
                       />
                     </Table.Cell>
                     <Table.Cell>
@@ -242,8 +243,9 @@ Search.propTypes = {
 export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Clubs');
+  const subscription2 = Meteor.subscribe('Favorites');
   return {
     clubs: Clubs.find({}).fetch(),
-    ready: subscription.ready(),
+    ready: subscription.ready() && subscription2.ready(),
   };
 })(Search);
