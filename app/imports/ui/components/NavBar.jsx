@@ -17,11 +17,12 @@ class NavBar extends React.Component {
         </Menu.Item>
         {this.props.currentUser ? (
 
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/reportproblem" key='list'>
-                <Icon name='exclamation'/>Report A Problem
-              </Menu.Item>,
+            [
               <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Dashboard</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>About the Developers</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/reportproblem" key='list'>
+                <Icon name='exclamation'/>Report A Problem
+              </Menu.Item>,
               ]
         ) : ''}
         {Roles.userIsInRole(Meteor.userId(), 'organizer') ? (

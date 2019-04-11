@@ -11,7 +11,6 @@ import ListStuff from '../pages/ListStuff';
 import ClubControlAdmin from '../pages/ClubControlAdmin';
 import ClubEditAdmin from '../pages/ClubEditAdmin';
 import ReportsAdmin from '../pages/ReportsAdmin';
-import AddStuff from '../pages/AddStuff';
 import AboutUsList from '../pages/AboutUsList';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import StudentHomepage from '../pages/StudentHomepage';
