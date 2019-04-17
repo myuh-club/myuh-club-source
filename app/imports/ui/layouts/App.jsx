@@ -26,6 +26,8 @@ import Register from '../pages/Register';
 import Signout from '../pages/Signout';
 import ReportProblem from '../pages/ReportProblem';
 import LogIn from '../pages/LogIn';
+import Search from '../pages/Search';
+import Favorites from '../pages/Favorites';
 
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -39,6 +41,8 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
+              <Route path='/favorites' component={Favorites}/>
+              <Route path='/search' component={Search}/>
               <ProtectedRoute path="/list" component={AboutUsList}/>
               <ProtectedRoute path="/add" component={StudentHomepage}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
