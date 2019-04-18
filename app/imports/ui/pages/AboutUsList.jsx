@@ -49,6 +49,14 @@ class AboutUsList extends React.Component {
   }
 }
 
+
+
+
+
+
+
+
+/* the rest of codes are not necessary */
 /** Require an array of Stuff documents in the props. */
 AboutUsList.propTypes = {
   stuffs: PropTypes.array.isRequired,
