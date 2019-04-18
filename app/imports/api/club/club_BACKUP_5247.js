@@ -8,7 +8,11 @@ const Clubs = new Mongo.Collection('Clubs');
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const ClubSchema = new SimpleSchema({
   name: String,
+<<<<<<< HEAD
   type: String,
+=======
+  /** Add type, favorite option,  */
+>>>>>>> master
   quantity: Number,
   owner: String,
   image: String,

@@ -18,6 +18,7 @@
   "defaultClubs": [
     {
       "name": "AECT-Hawaii",
+      "type": "Academic/Professional",
       "quantity": 10,
       "owner": "john@foo.com",
       "image": "https://philipmjohnson.github.io/images/philip2.jpeg",
@@ -27,12 +28,23 @@
     },
     {
       "name": "AAUW UHM",
+      "type": "Recreational",
       "quantity": 30,
       "owner": "john@foo.com",
       "image": "https://philipmjohnson.github.io/images/philip2.jpeg",
       "location": "Paradise Palms",
       "time": "Mon 2-4pm",
       "description": "AAUW UHM Club"
+    }
+  ],
+  "defaultFavorites": [
+    {
+      "id": "4TnjCkjzFJirKN7XN",
+      "favorites": ["8SihCYwy2BF62ctN6"]
+    },
+    {
+      "id": "St3dc2WLRquhPf547",
+      "favorites": ["8xdWr3GFTdKzQYjZ6"]
     }
   ]
 }
