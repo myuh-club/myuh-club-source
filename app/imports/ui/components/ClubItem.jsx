@@ -11,7 +11,8 @@ class ClubItem extends React.Component {
           <Item.Content>
             <Image floated='left' size='small' src={this.props.club.image} />
             <Item.Header>{this.props.club.name} </Item.Header>
-            <Item.Meta>{this.props.club.location} {this.props.club.time}</Item.Meta>
+            <Item.Meta>Meetings: {this.props.club.location} @ {this.props.club.time}</Item.Meta>
+            <Item.Meta>Members: {this.props.club.quantity}</Item.Meta>
             <Item.Description>
               {this.props.club.description}
             </Item.Description>

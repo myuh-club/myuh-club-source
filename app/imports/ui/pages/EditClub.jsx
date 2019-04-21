@@ -32,10 +32,9 @@ class EditClub extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">Club Organizer</Header>
+          <Header as="h2" textAlign="center">Club Editor</Header>
           <Grid container centered>
             <Grid.Column>
-              <Header as="h2" textAlign="center">Edit Club</Header>
               <AutoForm ref={(ref) => {
                 this.formRef = ref;
               }} schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>

@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Item, Header, Loader } from 'semantic-ui-react';
-import { Clubs } from '/imports/api/club/club';
+import { Container, Grid, Header, Item, Loader } from 'semantic-ui-react';
+import { Reports } from '/imports/api/report/report';
+import ReportAdmin from '/imports/ui/components/ReportAdmin';
 /** import ReportAdmin from '/imports/ui/components/ReportAdmin'; */
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -18,8 +19,17 @@ class ReportsAdmin extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Report Tickets</Header>
-          <Item.Group divided>
-          </Item.Group>
+          <Grid columns={2}>
+            <Grid.Column>
+              <Header as="h3" textAlign="center">Awaiting Investigation</Header>
+              <Item.Group divided>
+                {this.props.reports.map((report, index) => <ReportAdmin key={index} report={report}/>)}
+              </Item.Group>
+            </Grid.Column>
+            <Grid.Column>
+              <Header as="h3" textAlign="center">Under Investigation</Header>
+            </Grid.Column>
+          </Grid>
         </Container>
     );
   }
@@ -27,16 +37,16 @@ class ReportsAdmin extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 ReportsAdmin.propTypes = {
-  clubs: PropTypes.array.isRequired,
+  reports: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Club documents.
-  const subscription = Meteor.subscribe('ClubAdmin');
+  const subscription = Meteor.subscribe('Reports');
   return {
-    clubs: Clubs.find({}).fetch(),
+    reports: Reports.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(ReportsAdmin);
