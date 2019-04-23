@@ -8,8 +8,6 @@ import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
 import { Roles } from 'meteor/alanning:roles';
 
-
-
 /** A simple static component to render some text for the landing page. */
 class MyUhLanding extends React.Component {
   render() {
@@ -35,11 +33,23 @@ class MyUhLanding extends React.Component {
               </Grid.Column>
             </Grid.Row>
 
+          </Grid>
+
+          <hr/>
+
+          <Grid>
             <Grid.Row>
               <Header as='h2'>What is RIO?</Header>
-              <Header as='h4'>Registered Independent Organizations (RIOs) 'serve the campus and greater community by providing leadership development for students and by promoting community spirit, activism, public service, and social, recreational, and cultural interaction among UHM students, faculty, and staff.' (UH Manoa Website) <br/> Use MyUH Club to search through RIOs! </Header>
+              <Header as='h4'>Registered Independent Organizations (RIOs) "serve the campus and greater community by
+                providing leadership development for students and by promoting community spirit, activism, public
+                service, and social, recreational, and cultural interaction among UHM students, faculty, and staff." (UH
+                Manoa Website) <br/> Use MyUH Club to search through RIOs! </Header>
             </Grid.Row>
+          </Grid>
 
+          <hr/>
+
+          <Grid textAlign='center'>
             <Grid.Row columns={3}>
 
 
@@ -54,7 +64,7 @@ class MyUhLanding extends React.Component {
                   <Button.Group>
                     <Button as={Link} to="/signin" color='teal'>Sign In</Button>
                     <Button.Or/>
-                    <Button as={Link} to="/signup" positive >Sign Up</Button>
+                    <Button as={Link} to="/signup" positive>Sign Up</Button>
                   </Button.Group>
                 </List.Item>
                 <List.Item>
@@ -83,6 +93,5 @@ const MyUhLandingContainer = withTracker(() => ({
 
 /** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */
 export default withRouter(MyUhLandingContainer);
-
 
 // export default Landing;
