@@ -81,7 +81,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Academic/Professional'}
-                          checked={true}
+                          defaultChecked
                           toggle
                           label={'Academic &\nProfessional'}
                       />
