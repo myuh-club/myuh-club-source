@@ -21,10 +21,10 @@ class NavBar extends React.Component {
               <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Dashboard</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>About the Developers</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName='active' exact to='/search' key='search'>
-                <Icon name={'star'}/>Search
+                <Icon name={'search'}/>Search
               </Menu.Item>,
               <Menu.Item as={NavLink} activeClassName='active' exact to='/favorites' key='search'>
-                <Icon name={'search'}/>Favorites
+                <Icon name={'star'}/>Favorites
               </Menu.Item>,
               <Menu.Item as={NavLink} activeClassName="active" exact to="/reportproblem" key='list'>
                 <Icon name='exclamation'/>Report A Problem
