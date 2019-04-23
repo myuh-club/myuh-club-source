@@ -11,72 +11,50 @@ import { Favorites } from '/imports/api/favorite/favorite';
 class Search extends React.Component {
 
   selectAll() {
-    const ids = [
-      'Academic/Professional',
-      'Ethnic/Cultural',
-      'Fan Club',
-      'Fraternity/Sorority',
-      'Honorary Society',
-      'Recreational',
-      'Lifestyle',
-      'Political',
-      'Religious/Spiritual',
-      'Service',
-      'Sports',
-      'Student Affairs',
-    ];
-    ids.map((id) => (document.getElementById(id).checked = true));
+    this.state.ids.map((id) => function(id) {
+        const prevState = {...this.state.document.getElementById(id)};
+        prevState.checked = true;
+        this.setState({prevState});
+    });
   }
 
   removeAll() {
-    const ids = [
-      'Academic/Professional',
-      'Ethnic/Cultural',
-      'Fan Club',
-      'Fraternity/Sorority',
-      'Honorary Society',
-      'Recreational',
-      'Lifestyle',
-      'Political',
-      'Religious/Spiritual',
-      'Service',
-      'Sports',
-      'Student Affairs',
-    ];
-    ids.map((id) => (document.getElementById(id).checked = false));
+    this.state.ids.map((id) => function(id) {
+      const prevState = {...this.state.document.getElementById(id)};
+      prevState.checked = false;
+      this.setState({prevState});
+    });
   }
 
-  currentlyChecked() {
-    const ids = [
-      'Academic/Professional',
-      'Ethnic/Cultural',
-      'Fan Club',
-      'Fraternity/Sorority',
-      'Honorary Society',
-      'Recreational',
-      'Lifestyle',
-      'Political',
-      'Religious/Spiritual',
-      'Service',
-      'Sports',
-      'Student Affairs',
-    ];
+  searchClubs() {
     const checked = [];
     const checkedObjects = [];
-    ids.map(
+    //Adds checked ids to "checked" array
+    this.state.ids.map(
         (id) =>(document.getElementById(id).checked ? checked.push(document.getElementById(id).id) : null),
     );
+    //Adds checked types to "checkedObjects" array
     checked.map(
         (type) => (checkedObjects.push({"type": type}))
     );
-    console.log(checked);
-    console.log(checkedObjects);
     const filter = [];
     checkedObjects.map((obj) => filter.push(obj));
-    const contents = Clubs.find({$or: filter}).fetch();
-    console.log(contents);
-    this.setState({list: Clubs.find({$or: filter}).fetch()});
-    console.log(this.state.list);
+    //console.log('filter');
+    //console.log(filter);
+    if (filter.length > 0) {
+      this.setState({ currentlySelected: Clubs.find({ $or: filter }).fetch() },
+          function () {
+            console.log(this.state.currentlySelected);
+          }
+      );
+    }
+    this.state.ids.map((id) => console.log(document.getElementById(id).checked));
+    /*
+    console.log('Checked:');
+    console.log(checked);
+    console.log('Checked Objects: ');
+    console.log(checkedObjects);
+    */
   }
 
   render() {
@@ -103,8 +81,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Academic/Professional'}
-                          defaultChecked={true}
-                          padded
+                          checked={true}
                           toggle
                           label={'Academic &\nProfessional'}
                       />
@@ -112,7 +89,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Ethnic/Cultural'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Ethnic &\nCultural'}
                       />
@@ -120,7 +97,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Fan Club'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Fan Club'}
                       />
@@ -128,7 +105,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Fraternity/Sorority'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Fraternity &\nSorority'}
                       />
@@ -138,7 +115,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Honorary Society'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Honorary Society'}
                       />
@@ -146,7 +123,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Recreational'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Recreational'}
                       />
@@ -154,7 +131,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Lifestyle'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Lifestyle'}
                       />
@@ -162,7 +139,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Political'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Political'}
                       />
@@ -172,7 +149,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Religious/Spiritual'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Religious &\nSpiritual'}
                       />
@@ -180,7 +157,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Service'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Service'}
                       />
@@ -188,7 +165,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                         id={'Sports'}
-                        defaultChecked={true}
+                        defaultChecked
                         toggle
                         label={'Sports'}
                       />
@@ -196,7 +173,7 @@ class Search extends React.Component {
                     <Table.Cell>
                       <Checkbox
                           id={'Student Affairs'}
-                          defaultChecked={true}
+                          defaultChecked
                           toggle
                           label={'Student Affairs'}
                       />
@@ -206,7 +183,7 @@ class Search extends React.Component {
               </Table>
             </Grid.Column>
             <Grid.Column width={3}>
-              <Button size='massive' onClick={this.currentlyChecked}>
+              <Button size='massive' onClick={this.searchClubs}>
                 <Icon name='search'/>Search
               </Button>
             </Grid.Column>
@@ -214,7 +191,7 @@ class Search extends React.Component {
           <hr/>
           <Grid verticalAlign='middle' textAlign='center' columns={4} padded container>
             <Card.Group>
-              {this.state.list.map((club) => <Club
+              {this.state.currentlySelected.map((club) => <Club
                 key={club._id}
                 club={club}
               />)}
@@ -226,9 +203,24 @@ class Search extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: []
+      ids: ['Academic/Professional',
+        'Ethnic/Cultural',
+        'Fan Club',
+        'Fraternity/Sorority',
+        'Honorary Society',
+        'Recreational',
+        'Lifestyle',
+        'Political',
+        'Religious/Spiritual',
+        'Service',
+        'Sports',
+        'Student Affairs'],
+      currentlySelected: []
     };
-    this.currentlyChecked = this.currentlyChecked.bind(this);
+    this.selectAll = this.selectAll.bind(this);
+    this.removeAll = this.removeAll.bind(this);
+    this.searchClubs = this.searchClubs.bind(this);
+    this.renderPage = this.renderPage.bind(this);
   }
 }
 
