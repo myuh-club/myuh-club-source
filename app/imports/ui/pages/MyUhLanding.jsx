@@ -35,6 +35,11 @@ class MyUhLanding extends React.Component {
               </Grid.Column>
             </Grid.Row>
 
+            <Grid.Row>
+              <Header as='h2'>What is RIO?</Header>
+              <Header as='h4'>Registered Independent Organizations (RIOs) 'serve the campus and greater community by providing leadership development for students and by promoting community spirit, activism, public service, and social, recreational, and cultural interaction among UHM students, faculty, and staff.' (UH Manoa Website) <br/> Use MyUH Club to search through RIOs! </Header>
+            </Grid.Row>
+
             <Grid.Row columns={3}>
 
 
