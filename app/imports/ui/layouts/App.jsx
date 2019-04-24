@@ -34,8 +34,8 @@ class App extends React.Component {
   render() {
     return (
         <Router>
-          <div className="myuhclub-landing-background">
-            <div className='myuhclub-landing-background-opacity'>
+          <div className="myuhclub-background">
+            <div className='myuhclub-background-opacity'>
               <NavBar/>
               <Switch>
                 <Route exact path="/" component={Landing}/>
@@ -44,7 +44,7 @@ class App extends React.Component {
                 <Route path='/favorites' component={FavoritesPage}/>
                 <Route path='/search' component={Search}/>
                 <ProtectedRoute path="/developers" component={AboutUsList}/>
-                <ProtectedRoute path="/add" component={StudentHomepage}/>
+                <ProtectedRoute path="/studentHomePage" component={StudentHomepage}/>
                 <AdminProtectedRoute path="/aE" component={ClubEditAdmin}/>
                 <AdminProtectedRoute path="/aD" component={ClubControlAdmin}/>
                 <AdminProtectedRoute path="/aR" component={ReportsAdmin}/>
