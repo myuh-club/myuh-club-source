@@ -35,7 +35,7 @@ class App extends React.Component {
     return (
         <Router>
           <div className="myuhclub-landing-background">
-            <div className='myuhclub-landing-background-right'>
+            <div className='myuhclub-landing-background-opacity'>
               <NavBar/>
               <Switch>
                 <Route exact path="/" component={Landing}/>

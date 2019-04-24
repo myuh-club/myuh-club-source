@@ -10,22 +10,36 @@ import AboutUs from '/imports/ui/components/AboutUs';
 class AboutUsList extends React.Component {
   people = [{
 
-    firstName:' Yusuke ', lastName:'Hatanaka', image: 'https://avatars1.githubusercontent.com/u/35472702?s=400&v=4', description:'Yusuke is a Computer Science student at UH Manoa.',
-    email:'yusukemh@hawaii.edu',portfolio:'https://yusukemh.github.io/'
-  },
-      {
-    firstName: ' Ronnie ', lastName: 'Kauanoe', image: 'https://avatars1.githubusercontent.com/u/31224445?s=400&v=4',
-    description: 'Ronnie is a Computer Science student at UH Manoa.', email:'rkauanoe@hawaii.edu', portfolio: 'https://ronnie-kauanoe.github.io/'
+    firstName: ' Yusuke ',
+    lastName: 'Hatanaka',
+    image: 'https://avatars1.githubusercontent.com/u/35472702?s=400&v=4',
+    description: 'Yusuke is a Computer Science student at UH Manoa.',
+    email: 'yusukemh@hawaii.edu',
+    portfolio: 'https://yusukemh.github.io/'
   },
     {
-      firstName: ' Nicholas ', lastName: 'Miyamoto-Pennywell',
-      image: 'https://avatars2.githubusercontent.com/u/31229605?s=400&v=4',
-      description: 'Nicholas is a Computer Science student at UH Manoa.', email:'nkmp@hawaii.edu', portfolio:'https://nicholasmp.github.io/'
+      firstName: ' Ronnie ',
+      lastName: 'Kauanoe',
+      image: 'https://avatars1.githubusercontent.com/u/31224445?s=400&v=4',
+      description: 'Ronnie is a Computer Science student at UH Manoa.',
+      email: 'rkauanoe@hawaii.edu',
+      portfolio: 'https://ronnie-kauanoe.github.io/'
     },
     {
-      firstName: ' Quinne ', lastName: 'Uchida',
+      firstName: ' Nicholas ',
+      lastName: 'Miyamoto-Pennywell',
+      image: 'https://avatars2.githubusercontent.com/u/31229605?s=400&v=4',
+      description: 'Nicholas is a Computer Science student at UH Manoa.',
+      email: 'nkmp@hawaii.edu',
+      portfolio: 'https://nicholasmp.github.io/'
+    },
+    {
+      firstName: ' Quinne ',
+      lastName: 'Uchida',
       image: 'https://avatars0.githubusercontent.com/u/29992595?s=400&u=cc1568deef691d1e8be0d31797af3a8b229f6014&v=4',
-      description: 'Quinne is a Computer Science student at UH Manoa.', email:'qauchida@hawaii.edu', portfolio:'https://qauchida.github.io/'
+      description: 'Quinne is a Computer Science student at UH Manoa.',
+      email: 'qauchida@hawaii.edu',
+      portfolio: 'https://qauchida.github.io/'
     },
   ];
 
@@ -37,29 +51,19 @@ class AboutUsList extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-        <div className='myuhclub-landing-background'>
-          <div className='myuhclub-landing-background-right'>
 
+        <div>
+          <Header as="h1" textAlign="center" icon inverted>
+            <Icon name="keyboard" circular inverted color='teal'/> About the Developers
+          </Header>
 
-            <Header as="h1" textAlign="center" icon inverted>
-              <Icon name="keyboard" circular inverted color='teal'/> About the Developers
-            </Header>
-
-          <Card.Group centered items ={this.contacts}>
-            {this.people.map((people, index) => <AboutUs key = {index} people = {people}/> )}
+          <Card.Group centered items={this.contacts}>
+            {this.people.map((people, index) => <AboutUs key={index} people={people}/>)}
           </Card.Group>
-          </div>
         </div>
     );
   }
 }
-
-
-
-
-
-
-
 
 /* the rest of codes are not necessary */
 /** Require an array of Stuff documents in the props. */
