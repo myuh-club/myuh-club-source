@@ -14,7 +14,7 @@ import Club from '/imports/ui/components/Club';
 /** A simple static component to render some text for the landing page. */
 class MyUhLanding extends React.Component {
   render() {
-    const imageBorder = {borderRadius: '50 %'};
+    const imageBorder = { borderRadius: '50 %' };
     return (
         <div className='myuhclub-landing-background'>
           <div className='myuhclub-landing-background-right'>
@@ -45,49 +45,42 @@ class MyUhLanding extends React.Component {
 
               <hr/>
 
-              <Grid>
-                <Grid.Row>
-                  <Header as='h2' inverted>What is RIO?</Header>
-                  <Header as='h4' inverted>Registered Independent Organizations (RIOs) "serve the campus and greater community by
-                    providing leadership development for students and by promoting community spirit, activism, public
-                    service, and social, recreational, and cultural interaction among UHM students, faculty, and staff."
-                    (UH
-                    Manoa Website) <br/> Use MyUH Club to search through RIOs! </Header>
-                </Grid.Row>
-              </Grid>
-
-              <hr/>
-
               <Grid textAlign='center'>
-                <Grid.Row columns={3}>
-                  <Card.Group>
-                    {this.props.clubs.map((club) => <Club
-                        key={club._id}
-                        club={club}
-                    />)}
-                  </Card.Group>
+                <Grid.Row columns={2}>
+                  <Grid.Column>
+                    <Header as='h2' inverted>What is RIO?</Header>
+                    <Header as='h3' inverted textAlign='left'>Registered Independent Organizations (RIOs) "serve the
+                      campus and greater community by
+                      providing leadership development for students and by promoting community spirit, activism, public
+                      service, and social, recreational, and cultural interaction among UHM students, faculty, and
+                      staff." (UH Manoa Website) <br/> Use MyUH Club to search through RIOs! </Header>
 
-                </Grid.Row>
+                    <Button as={Link} to="/search" color='black' size='huge'>
+                      <Icon name='search'/>
+                      Search
+                    </Button>
+                  </Grid.Column>
 
-                {this.props.currentUser ? ("You are Logged in.") : ("You are not logged in")}
+
+                  {this.props.currentUser ? ('') : (
+                      [
+                        <Grid.Column>
+                          <Header as='h1' inverted>Sign up to...</Header>
+                          <List>
+                            <Header as='h3' inverted><Icon name='search' size='huge' inverted/>Search for Your Club</Header>
+                            <Header as='h3' inverted><Icon name='star' size='huge' inverted/>Add to Your Favorite</Header>
+                            <Header as='h3' inverted><Icon name='users' size='huge' inverted/>Expand Your Community</Header>
+                          </List>
+                          <Button.Group>
+                            <Button as={Link} to="/signin" color='teal'>Sign In</Button>
+                            <Button.Or/>
+                            <Button as={Link} to="/signup" positive>Sign Up</Button>
+                          </Button.Group>
+                        </Grid.Column>
+                      ]
+                  )}
 
 
-                <Grid.Row>
-                  <List>
-                    <List.Item>
-                      <Button.Group>
-                        <Button as={Link} to="/signin" color='teal'>Sign In</Button>
-                        <Button.Or/>
-                        <Button as={Link} to="/signup" positive>Sign Up</Button>
-                      </Button.Group>
-                    </List.Item>
-                    <List.Item>
-                      <Button as={Link} to="/search" color='black' size='huge'>
-                        <Icon name='search'/>
-                        Search
-                      </Button>
-                    </List.Item>
-                  </List>
                 </Grid.Row>
               </Grid>
             </Container>
