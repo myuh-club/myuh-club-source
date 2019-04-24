@@ -73,8 +73,6 @@ class MyUhLanding extends React.Component {
                         </Button.Group>
                       </Grid.Column>
                   )}
-
-
                 </Grid.Row>
               </Grid>
             </Container>

@@ -12,8 +12,8 @@ class FavoritesPage extends React.Component {
   render() {
     return (
         <Container>
-          <Header as="h1" textAlign="center" icon>
-            <Icon name="star" circular/> Favorites
+          <Header as="h1" textAlign="center" icon inverted>
+            <Icon name="star" circular inverted color='teal'/> Favorites
           </Header>
           <Card.Group>
 

@@ -64,8 +64,8 @@ class Search extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h1" textAlign="center" icon>
-            <Icon name="search" circular/> Search
+          <Header as="h1" textAlign="center" icon inverted>
+            <Icon name="search" circular inverted color='teal'/> Search
           </Header>
           <Grid verticalAlign='middle' textAlign='center' container>
             {/*<Grid.Column width={3}>*/}

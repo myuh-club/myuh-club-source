@@ -29,34 +29,35 @@ import LogIn from '../pages/LogIn';
 import Search from '../pages/Search';
 import FavoritesPage from '../pages/FavoritesPage';
 
-
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
   render() {
     return (
         <Router>
-          <div>
-            <NavBar/>
-            <Switch>
-              <Route exact path="/" component={Landing}/>
-              <Route path="/signin" component={Signin}/>
-              <Route path="/signup" component={Signup}/>
-              <Route path='/favorites' component={FavoritesPage}/>
-              <Route path='/search' component={Search}/>
-              <ProtectedRoute path="/developers" component={AboutUsList}/>
-              <ProtectedRoute path="/add" component={StudentHomepage}/>
-              <AdminProtectedRoute path="/aE" component={ClubEditAdmin}/>
-              <AdminProtectedRoute path="/aD" component={ClubControlAdmin}/>
-              <AdminProtectedRoute path="/aR" component={ReportsAdmin}/>
-              <ProtectedRoute path="/reportproblem" component={ReportProblem}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/eC" component={ListClub}/>
-              <ProtectedRoute path="/edit/:_id" component={EditClub}/>
-              <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
-              <ProtectedRoute path="/signout" component={Signout}/>
-              <Route component={NotFound}/>
-            </Switch>
-            <Footer/>
+          <div className="myuhclub-landing-background">
+            <div className='myuhclub-landing-background-right'>
+              <NavBar/>
+              <Switch>
+                <Route exact path="/" component={Landing}/>
+                <Route path="/signin" component={Signin}/>
+                <Route path="/signup" component={Signup}/>
+                <Route path='/favorites' component={FavoritesPage}/>
+                <Route path='/search' component={Search}/>
+                <ProtectedRoute path="/developers" component={AboutUsList}/>
+                <ProtectedRoute path="/add" component={StudentHomepage}/>
+                <AdminProtectedRoute path="/aE" component={ClubEditAdmin}/>
+                <AdminProtectedRoute path="/aD" component={ClubControlAdmin}/>
+                <AdminProtectedRoute path="/aR" component={ReportsAdmin}/>
+                <ProtectedRoute path="/reportproblem" component={ReportProblem}/>
+                <ProtectedRoute path="/add" component={AddStuff}/>
+                <ProtectedRoute path="/eC" component={ListClub}/>
+                <ProtectedRoute path="/edit/:_id" component={EditClub}/>
+                <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
+                <ProtectedRoute path="/signout" component={Signout}/>
+                <Route component={NotFound}/>
+              </Switch>
+              <Footer/>
+            </div>
           </div>
         </Router>
     );
@@ -69,16 +70,16 @@ class App extends React.Component {
  * @param {any} { component: Component, ...rest }
  */
 const ProtectedRoute = ({ component: Component, ...rest }) => (
-  <Route
-    {...rest}
-    render={(props) => {
-      const isLogged = Meteor.userId() !== null;
-      return isLogged ?
-          (<Component {...props} />) :
-          (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
-      );
-    }}
-  />
+    <Route
+        {...rest}
+        render={(props) => {
+          const isLogged = Meteor.userId() !== null;
+          return isLogged ?
+              (<Component {...props} />) :
+              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+              );
+        }}
+    />
 );
 
 /**
