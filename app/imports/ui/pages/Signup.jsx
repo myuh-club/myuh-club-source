@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
+import { Container, Form, Grid, Header, Icon, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
 
 /**
@@ -40,7 +40,8 @@ export default class Signup extends React.Component {
         <Container>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
-              <Header as="h2" textAlign="center">
+              <Header as="h2" textAlign="center" icon inverted>
+                <Icon name="user plus" circular inverted color='teal'/>
                 Register your account
               </Header>
               <Form onSubmit={this.handleSubmit}>

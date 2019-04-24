@@ -51,7 +51,6 @@ class AboutUsList extends React.Component {
   /** Render the page once subscriptions have been received. */
   renderPage() {
     return (
-
         <div>
           <Header as="h1" textAlign="center" icon inverted>
             <Icon name="keyboard" circular inverted color='teal'/> About the Developers
