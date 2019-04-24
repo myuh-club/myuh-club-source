@@ -60,20 +60,18 @@ class MyUhLanding extends React.Component {
 
 
                   {this.props.currentUser ? ('') : (
-                      [
-                        <Grid.Column>
-                          <Header as='h1' inverted>Sign up to...</Header>
-                          <Header as='h3' inverted><Icon name='search'/>Search for Your Club</Header>
-                          <Header as='h3' inverted><Icon name='star'/>Add to Your Favorite</Header>
-                          <Header as='h3' inverted><Icon name='users'/>Expand Your Community</Header>
+                      <Grid.Column>
+                        <Header as='h1' inverted>Sign up to...</Header>
+                        <Header as='h3' inverted><Icon name='search'/>Search for Your Club</Header>
+                        <Header as='h3' inverted><Icon name='star'/>Add to Your Favorite</Header>
+                        <Header as='h3' inverted><Icon name='users'/>Expand Your Community</Header>
 
-                          <Button.Group>
-                            <Button as={Link} to="/signin" color='teal'>Sign In</Button>
-                            <Button.Or/>
-                            <Button as={Link} to="/signup" positive>Sign Up</Button>
-                          </Button.Group>
-                        </Grid.Column>
-                      ]
+                        <Button.Group>
+                          <Button as={Link} to="/signin" color='teal'>Sign In</Button>
+                          <Button.Or/>
+                          <Button as={Link} to="/signup" positive>Sign Up</Button>
+                        </Button.Group>
+                      </Grid.Column>
                   )}
 
 
@@ -89,18 +87,12 @@ class MyUhLanding extends React.Component {
 /** Declare the types of all properties. */
 MyUhLanding.propTypes = {
   currentUser: PropTypes.string,
-  clubs: PropTypes.array.isRequired,
-  ready: PropTypes.bool.isRequired,
 };
 
-export default withTracker(() => {
-  // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Clubs');
-  return {
-    currentUser: Meteor.user() ? Meteor.user().username : '',
-    clubs: Clubs.find({}).fetch(),
-    ready: subscription.ready(),
-  };
-})(MyUhLanding);
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+const MyUhLandingContainer = withTracker(() => ({
+  currentUser: Meteor.user() ? Meteor.user().username : '',
+}))(MyUhLanding);
 
-// export default Landing;
+/** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */
+export default withRouter(MyUhLandingContainer);
