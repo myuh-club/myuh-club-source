@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Icon, Header, Button, List, Image, Container, Card } from 'semantic-ui-react';
+import { Grid, Icon, Header, Button, Image, Container, Card } from 'semantic-ui-react';
 import { NavLink, withRouter, Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react/dist/commonjs/collections/Menu';
 
@@ -14,7 +14,6 @@ import Club from '/imports/ui/components/Club';
 /** A simple static component to render some text for the landing page. */
 class MyUhLanding extends React.Component {
   render() {
-    const imageBorder = { borderRadius: '50 %' };
     return (
         <div className='myuhclub-landing-background'>
           <div className='myuhclub-landing-background-right'>
@@ -22,9 +21,7 @@ class MyUhLanding extends React.Component {
               <Grid>
                 <Grid.Row columns={2} verticalAlign='middle'>
                   <Grid.Column width={6}>
-                    <div style={imageBorder}>
-                      <Image src="/images/UH-Manoa-min.png"/>
-                    </div>
+                    <Image src="/images/UH-Manoa-min.png"/>
                   </Grid.Column>
 
                   <Grid.Column width={10}>
@@ -66,11 +63,10 @@ class MyUhLanding extends React.Component {
                       [
                         <Grid.Column>
                           <Header as='h1' inverted>Sign up to...</Header>
-                          <List>
-                            <Header as='h3' inverted><Icon name='search' size='huge' inverted/>Search for Your Club</Header>
-                            <Header as='h3' inverted><Icon name='star' size='huge' inverted/>Add to Your Favorite</Header>
-                            <Header as='h3' inverted><Icon name='users' size='huge' inverted/>Expand Your Community</Header>
-                          </List>
+                          <Header as='h3' inverted><Icon name='search'/>Search for Your Club</Header>
+                          <Header as='h3' inverted><Icon name='star'/>Add to Your Favorite</Header>
+                          <Header as='h3' inverted><Icon name='users'/>Expand Your Community</Header>
+
                           <Button.Group>
                             <Button as={Link} to="/signin" color='teal'>Sign In</Button>
                             <Button.Or/>
