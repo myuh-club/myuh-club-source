@@ -10,6 +10,14 @@
 .myuhclub-signin-background {
   background-color: rbga(255, 255, 255, 255);
 }
+
+
 .darkerlink{
   color: blue;
 }
+
+.search-background {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
