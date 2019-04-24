@@ -46,7 +46,7 @@ class Search extends React.Component {
           function () {
             console.log(this.state.currentlySelected);
           }
-      );
+      );x
     }
     this.state.ids.map((id) => console.log(document.getElementById(id).checked));
     /*
@@ -68,13 +68,13 @@ class Search extends React.Component {
             <Icon name="search" circular/> Search
           </Header>
           <Grid verticalAlign='middle' textAlign='center' container>
-            <Grid.Column width={3}>
-              <Button.Group vertical>
-                <Button size="huge" positive onClick={this.selectAll}>Select All</Button>
-                <Button size="huge" negative onClick={this.removeAll}>Remove All</Button>
-              </Button.Group>
-            </Grid.Column>
-            <Grid.Column width={10}>
+            {/*<Grid.Column width={3}>*/}
+            {/*  <Button.Group vertical>*/}
+            {/*    <Button size="huge" positive onClick={this.selectAll}>Select All</Button>*/}
+            {/*    <Button size="huge" negative onClick={this.removeAll}>Remove All</Button>*/}
+            {/*  </Button.Group>*/}
+            {/*</Grid.Column>*/}
+            <Grid.Column width={13}>
               <Table basic='very'>
                 <Table.Body>
                   <Table.Row>
@@ -83,7 +83,7 @@ class Search extends React.Component {
                           id={'Academic/Professional'}
                           defaultChecked
                           toggle
-                          label={'Academic &\nProfessional'}
+                          label={'Academic & Professional'}
                       />
                     </Table.Cell>
                     <Table.Cell>
@@ -91,7 +91,7 @@ class Search extends React.Component {
                           id={'Ethnic/Cultural'}
                           defaultChecked
                           toggle
-                          label={'Ethnic &\nCultural'}
+                          label={'Ethnic & Cultural'}
                       />
                     </Table.Cell>
                     <Table.Cell>
@@ -107,7 +107,7 @@ class Search extends React.Component {
                           id={'Fraternity/Sorority'}
                           defaultChecked
                           toggle
-                          label={'Fraternity &\nSorority'}
+                          label={'Fraternity & Sorority'}
                       />
                     </Table.Cell>
                   </Table.Row>
@@ -151,7 +151,7 @@ class Search extends React.Component {
                           id={'Religious/Spiritual'}
                           defaultChecked
                           toggle
-                          label={'Religious &\nSpiritual'}
+                          label={'Religious & Spiritual'}
                       />
                     </Table.Cell>
                     <Table.Cell>
