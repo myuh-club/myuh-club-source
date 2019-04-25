@@ -42,8 +42,12 @@ class ReportProblem extends React.Component {
   render() {
     return (
         <Container>
-          <Header as="h1" textAlign="center" icon>
-            <Icon name="exclamation" circular/> Report A Problem
+          <Header as="h1" textAlign="center" icon inverted>
+            <Icon name="exclamation" inverted color='teal' circular/> Report A Problem
+          </Header>
+
+          <Header as='h3' inverted textAlign='center'>
+            Found any issue? Please let us know!
           </Header>
           <Grid container centered>
             <Grid.Column>

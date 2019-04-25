@@ -1,15 +1,23 @@
-.myuhclub-landing-background {
+.myuhclub-background {
   background: url('/images/uhCampus.jpg') no-repeat center center fixed;
   background-size: cover;
 }
 
-.myuhclub-landing-background-right {
+.myuhclub-background-opacity {
   background-color: rgba(0, 100, 0, 0.8);
 }
 
 .myuhclub-signin-background {
   background-color: rbga(255, 255, 255, 255);
 }
+
+
 .darkerlink{
   color: blue;
 }
+
+.search-background {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+}
+

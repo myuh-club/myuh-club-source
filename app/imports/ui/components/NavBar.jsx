@@ -18,25 +18,21 @@ class NavBar extends React.Component {
           {this.props.currentUser ? (
 
             [
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Dashboard</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>About the Developers</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/studentHomePage" key='studentHomePage'>Dashboard</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/developers" key='developers'>About the Developers</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName='active' exact to='/search' key='search'>
                 <Icon name={'search'}/>Search
               </Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName='active' exact to='/favorites' key='search'>
+              <Menu.Item as={NavLink} activeClassName='active' exact to='/favorites' key='favorites'>
                 <Icon name={'star'}/>Favorites
               </Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/reportproblem" key='list'>
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/reportproblem" key='reportproblem'>
                 <Icon name='exclamation'/>Report A Problem
               </Menu.Item>,
 
               ]
           ) : (
-              [
-                <Menu.Item as={NavLink} activeClassName="" exact to="/" key='landing'>
-                  <Header inverted as='h1'>MyUH Club</Header>
-                </Menu.Item>
-              ]
+              ''
           )}
 
           {Roles.userIsInRole(Meteor.userId(), 'organizer') ? (

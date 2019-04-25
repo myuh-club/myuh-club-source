@@ -64,10 +64,10 @@ class Search extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h1" textAlign="center" icon>
-            <Icon name="search" circular/> Search
+          <Header as="h1" textAlign="center" icon inverted>
+            <Icon name="search" circular inverted color='teal'/> Search
           </Header>
-          <Grid verticalAlign='middle' textAlign='center' container>
+          <Grid verticalAlign='middle' textAlign='center' container className='search-background'>
             {/*<Grid.Column width={3}>*/}
             {/*  <Button.Group vertical>*/}
             {/*    <Button size="huge" positive onClick={this.selectAll}>Select All</Button>*/}
