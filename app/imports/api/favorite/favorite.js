@@ -7,7 +7,7 @@ const Favorites = new Mongo.Collection('Favorites');
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const FavoriteSchema = new SimpleSchema({
-  id: String,
+  owner: String,
   favorites: Array,
   'favorites.$': String
 }, { tracker: Tracker });
