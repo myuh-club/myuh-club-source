@@ -5,9 +5,9 @@ import { Header, Icon } from 'semantic-ui-react';
 class NotFound extends React.Component {
   render() {
     return (
-          <Header as="h1" textAlign="center" icon inverted>
-            <Icon name="exclamation triangle" circular inverted color='teal'/>Page not found
-          </Header>
+        <Header as="h1" textAlign="center" icon inverted>
+          <Icon name="exclamation triangle" circular inverted color='teal'/>Page not found
+        </Header>
     );
   }
 }
