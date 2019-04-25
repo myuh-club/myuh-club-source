@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Image, Button, Icon } from 'semantic-ui-react';
+import { Card, Image, Button, Icon, Checkbox } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
-import { Favorites, FavoriteSchema} from '/imports/api/favorite/favorite';
+import { Favorites, FavoriteSchema } from '/imports/api/favorite/favorite';
 import { withRouter, Link } from 'react-router-dom';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
@@ -28,15 +28,18 @@ class Club extends React.Component {
             </Card.Description>
           </Card.Content>
           {Meteor.user() ?
-            <Button
-                content='Favorite'
-                ref={(ref) => {
-                  this.formRef = ref;
-                }}
-                schema={ClubSchema}
-                //onClick={this.onClick(this.props.club._id)}
-            />
-            : ''
+              <Card.Content>
+                <Checkbox
+                    ref={(ref) => {
+                      this.formRef = ref;
+                    }}
+                    slider
+                    label={'Favorite'}
+                    schema={ClubSchema}
+                    //onClick={this.onClick(this.props.club._id)}
+                />
+              </Card.Content>
+              : ''
           }
         </Card>
     );

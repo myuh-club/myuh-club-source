@@ -6,7 +6,8 @@ import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-import Landing from '../pages/Landing';
+// import Landing from '../pages/Landing';
+import Landing from '../pages/MyUhLanding';
 import ListStuff from '../pages/ListStuff';
 import ClubControlAdmin from '../pages/ClubControlAdmin';
 import ClubEditAdmin from '../pages/ClubEditAdmin';
@@ -14,7 +15,6 @@ import ReportsAdmin from '../pages/ReportsAdmin';
 import AboutUsList from '../pages/AboutUsList';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import StudentHomepage from '../pages/StudentHomepage';
-
 import EditStuff from '../pages/EditStuff';
 import AddStuff from '../pages/AddStuff';
 import EditClub from '../pages/EditClub';
@@ -27,7 +27,7 @@ import Signout from '../pages/Signout';
 import ReportProblem from '../pages/ReportProblem';
 import LogIn from '../pages/LogIn';
 import Search from '../pages/Search';
-import Favorites from '../pages/Favorites';
+import FavoritesPage from '../pages/FavoritesPage';
 
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
@@ -41,11 +41,10 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <Route path='/favorites' component={Favorites}/>
+              <Route path='/favorites' component={FavoritesPage}/>
               <Route path='/search' component={Search}/>
               <ProtectedRoute path="/list" component={AboutUsList}/>
               <ProtectedRoute path="/add" component={StudentHomepage}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <AdminProtectedRoute path="/aE" component={ClubEditAdmin}/>
               <AdminProtectedRoute path="/aD" component={ClubControlAdmin}/>
               <AdminProtectedRoute path="/aR" component={ReportsAdmin}/>

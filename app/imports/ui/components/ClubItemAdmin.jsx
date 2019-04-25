@@ -1,7 +1,7 @@
 import React from 'react';
 import { Item, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 /** Renders a single row in the Club Edit (Admin) table. See pages/ClubEditAdmin.jsx. */
 class ClubItemAdmin extends React.Component {
@@ -12,7 +12,8 @@ class ClubItemAdmin extends React.Component {
           <Item.Content>
             <Image floated='left' size='small' src={this.props.club.image} />
             <Item.Header>{this.props.club.name} </Item.Header>
-            <Item.Meta>{this.props.club.location} {this.props.club.time}</Item.Meta>
+            <Item.Meta>Meetings: {this.props.club.location} @ {this.props.club.time}</Item.Meta>
+            <Item.Meta>Members: {this.props.club.quantity}</Item.Meta>
             <Item.Description>
               {this.props.club.description}
             </Item.Description>
@@ -30,4 +31,4 @@ ClubItemAdmin.propTypes = {
   club: PropTypes.object.isRequired,
 };
 
-export default ClubItemAdmin;
+export default withRouter(ClubItemAdmin);

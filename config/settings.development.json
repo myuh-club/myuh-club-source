@@ -17,24 +17,124 @@
   ],
   "defaultClubs": [
     {
-      "name": "AECT-Hawaii",
-      "type": "Academic/Professional",
-      "quantity": 10,
-      "owner": "john@foo.com",
-      "image": "https://philipmjohnson.github.io/images/philip2.jpeg",
-      "location": "Keller Hall 302",
-      "time": "Anytime",
-      "description": "AECT-Hawaii Club"
+      "name": "Aloha Nation Flowarts",
+      "type": "Ethnic/Cultural",
+      "quantity": 1,
+      "owner": "onakan@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Aloha Nation Flowarts"
     },
     {
-      "name": "AAUW UHM",
+      "name": "Chess Club",
       "type": "Recreational",
-      "quantity": 30,
-      "owner": "john@foo.com",
-      "image": "https://philipmjohnson.github.io/images/philip2.jpeg",
-      "location": "Paradise Palms",
-      "time": "Mon 2-4pm",
-      "description": "AAUW UHM Club"
+      "quantity": 1,
+      "owner": "omorim@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Chess Club"
+    },
+    {
+      "name": "Delta Sigmi Pi",
+      "type": "Fraternity/Sorority",
+      "quantity": 1,
+      "owner": "jlee28@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Delta Sigmi Pi"
+    },
+    {
+      "name": "Gender Equity Movement",
+      "type": "Political",
+      "quantity": 1,
+      "owner": "hannahli@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Gender Equity Movement"
+    },
+    {
+      "name": "Hawaii Streams and Ecosystems",
+      "type": "Service",
+      "quantity": 1,
+      "owner": "aureliag@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Hawaii Streams and Ecosystems"
+    },
+    {
+      "name": "Mythological Madness",
+      "type": "Religious/Spiritual",
+      "quantity": 1,
+      "owner": "clewark@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Mythological Madness"
+    },
+    {
+      "name": "Phi Alpha Nu Sigma Honor Society",
+      "type": "Honorary Society",
+      "quantity": 1,
+      "owner": "cyoung22@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Phi Alpha Nu Sigma Honor Society"
+    },
+    {
+      "name": "Queen Nicki Minaj Fanclub",
+      "type": "Fan Club",
+      "quantity": 1,
+      "owner": "kevindo4@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Queen Nicki Minaj Fanclub"
+    },
+    {
+      "name": "Students with Keiki @ UH Manoa",
+      "type": "Student Affairs",
+      "quantity": 1,
+      "owner": "gotkids@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Students with Keiki @ UH Manoa"
+    },
+    {
+      "name": "Surfrider Student Chapter ",
+      "type": "Sports",
+      "quantity": 1,
+      "owner": "penadomi@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Surfrider Student Chapter "
+    },
+    {
+      "name": "The National Society of Collegiate Scholars at the University of Hawaii at Manoa Chapter",
+      "type": "Academic/Professional",
+      "quantity": 1,
+      "owner": "bm31@hawaii.edu",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "The National Society of Collegiate Scholars at the University of Hawaii at Manoa Chapter"
+    },
+    {
+      "name": "Vegan Society at UH Manoa",
+      "type": "Lifestyle",
+      "quantity": 1,
+      "owner": "rbarsocc@hawaii.edu ",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "anywhere",
+      "time": "anytime",
+      "description": "Vegan Society at UH Manoa"
     }
   ],
   "defaultFavorites": [
