@@ -11,6 +11,7 @@ const ReportSchema = new SimpleSchema({
   title: String,
   message: String,
   time: Date,
+  investigation: Boolean,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

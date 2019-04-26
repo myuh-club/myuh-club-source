@@ -6,20 +6,19 @@ import { withRouter } from 'react-router-dom';
 import { Bert } from 'meteor/themeteorchef:bert';
 
 /** Renders a single row in the Club Edit (Admin) table. See pages/ClubEditAdmin.jsx. */
-class ReportAdmin extends React.Component {
+class ReportInvestigationAdmin extends React.Component {
 
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
-    this.investigate = this.investigate.bind(this);
+    this.deleteCallback = this.deleteCallback.bind(this);
   }
 
   onClick() {
-    const _id = this.props.report._id;
-    Reports.update(_id, { $set: { investigation: Boolean(true) } });
+    Reports.remove(this.props.report._id, this.deleteCallback);
   }
 
-  investigate(error) {
+  deleteCallback(error) {
     if (error) {
       Bert.alert({ type: 'danger', message: `Delete failed: ${error.message}` });
     } else {
@@ -40,7 +39,7 @@ class ReportAdmin extends React.Component {
             </Item.Description>
           </Item.Content>
           <Item.Content extra>
-            <Button onClick={this.onClick}>Resolve</Button>
+            <Button onClick={this.onClick}>Solved!</Button>
         </Item.Content>
         </Item>
     );
@@ -48,8 +47,8 @@ class ReportAdmin extends React.Component {
 }
 
 /** Require a document to be passed to this component. */
-ReportAdmin.propTypes = {
+ReportInvestigationAdmin.propTypes = {
   report: PropTypes.object.isRequired,
 };
 
-export default withRouter(ReportAdmin);
+export default withRouter(ReportInvestigationAdmin);

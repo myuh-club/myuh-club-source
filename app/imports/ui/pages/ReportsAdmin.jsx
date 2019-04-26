@@ -3,7 +3,7 @@ import { Meteor } from 'meteor/meteor';
 import { Container, Grid, Header, Item, Loader } from 'semantic-ui-react';
 import { Reports } from '/imports/api/report/report';
 import ReportAdmin from '/imports/ui/components/ReportAdmin';
-/** import ReportAdmin from '/imports/ui/components/ReportAdmin'; */
+import ReportInvestigationAdmin from '/imports/ui/components/ReportInvestigationAdmin';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
@@ -23,11 +23,14 @@ class ReportsAdmin extends React.Component {
             <Grid.Column>
               <Header as="h3" textAlign="center">Awaiting Investigation</Header>
               <Item.Group divided>
-                {this.props.reports.map((report, index) => <ReportAdmin key={index} report={report}/>)}
+                {this.props.areports.map((report, index) => <ReportAdmin key={index} report={report}/>)}
               </Item.Group>
             </Grid.Column>
             <Grid.Column>
               <Header as="h3" textAlign="center">Under Investigation</Header>
+              <Item.Group divided>
+                {this.props.ireports.map((report, index) => <ReportInvestigationAdmin key={index} report={report}/>)}
+              </Item.Group>
             </Grid.Column>
           </Grid>
         </Container>
@@ -37,7 +40,8 @@ class ReportsAdmin extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 ReportsAdmin.propTypes = {
-  reports: PropTypes.array.isRequired,
+  areports: PropTypes.array.isRequired,
+  ireports: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -46,7 +50,8 @@ export default withTracker(() => {
   // Get access to Club documents.
   const subscription = Meteor.subscribe('Reports');
   return {
-    reports: Reports.find({}).fetch(),
+    areports: Reports.find({ investigation: Boolean(false) }).fetch(),
+    ireports: Reports.find({ investigation: Boolean(true) }).fetch(),
     ready: subscription.ready(),
   };
 })(ReportsAdmin);
