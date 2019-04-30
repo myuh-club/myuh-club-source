@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Header, Loader, Card, Icon } from 'semantic-ui-react';
+import { Header, Loader, Card, Icon } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -56,7 +56,7 @@ class AboutUsList extends React.Component {
             <Icon name="keyboard" circular inverted color='teal'/> About the Developers
           </Header>
 
-          <Card.Group centered items={this.contacts}>
+          <Card.Group centered>
             {this.people.map((people, index) => <AboutUs key={index} people={people}/>)}
           </Card.Group>
         </div>

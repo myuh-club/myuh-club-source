@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Grid, Header, Item, Loader } from 'semantic-ui-react';
+import { Container, Grid, Header, Icon, Item, Loader } from 'semantic-ui-react';
 import { Reports } from '/imports/api/report/report';
 import ReportAdmin from '/imports/ui/components/ReportAdmin';
 import ReportInvestigationAdmin from '/imports/ui/components/ReportInvestigationAdmin';
@@ -18,7 +18,11 @@ class ReportsAdmin extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center" inverted>Report Tickets</Header>
+
+          <Header as="h1" textAlign="center" icon inverted>
+            <Icon name="file alternate" circular inverted color='teal'/> Report Tickets
+          </Header>
+
           <Grid columns={2}>
             <Grid.Column>
               <Header as="h3" textAlign="center" inverted>Awaiting Investigation</Header>

@@ -8,7 +8,7 @@ class ClubItemAdmin extends React.Component {
 
   render() {
     const style = { color: '#FFF' };
-    const linkStyle = { float: 'right' };
+    const linkStyle = { float: 'right', color:'#FFF', borderBottom: 'solid 1px #FFF' };
     return (
         <Item style={style}>
           <Item.Content>

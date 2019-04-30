@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Item, Header, Loader } from 'semantic-ui-react';
+import { Container, Item, Header, Loader, Icon } from 'semantic-ui-react';
 import { Clubs } from '/imports/api/club/club';
 import ClubItemAdmin from '/imports/ui/components/ClubItemAdmin';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -17,7 +17,10 @@ class ClubEditAdmin extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center" inverted>Clubs (Admin)</Header>
+          <Header as="h1" textAlign="center" icon inverted>
+            <Icon name="pencil" circular inverted color='teal'/> Edit Clubs
+          </Header>
+
           <Item.Group divided>
             {this.props.clubs.map((club, index) => <ClubItemAdmin key={index} club={club}/>)}
           </Item.Group>
