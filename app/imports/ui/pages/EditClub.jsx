@@ -32,7 +32,7 @@ class EditClub extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">Club Editor</Header>
+          <Header as="h2" textAlign="center" inverted>Club Editor</Header>
           <Grid container centered>
             <Grid.Column>
               <AutoForm ref={(ref) => {

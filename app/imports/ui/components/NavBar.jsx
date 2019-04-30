@@ -16,9 +16,9 @@ class NavBar extends React.Component {
             <Header inverted as='h1'>MyUH Club</Header>
           </Menu.Item>
           {this.props.currentUser ? (
-
             [
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/developers" key='developers'>About the Developers</Menu.Item>,
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/developers" key='developers'>
+                About the Developers</Menu.Item>,
               <Menu.Item as={NavLink} activeClassName='active' exact to='/search' key='search'>
                 <Icon name={'search'}/>Search
               </Menu.Item>,
