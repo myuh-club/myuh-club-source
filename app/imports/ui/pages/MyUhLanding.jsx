@@ -13,6 +13,7 @@ import { Clubs } from '/imports/api/club/club';
 /** A simple static component to render some text for the landing page. */
 class MyUhLanding extends React.Component {
   render() {
+    const font = { fontFamily: 'Gothic' };
     return (
         <Container>
           <Grid>
@@ -22,15 +23,15 @@ class MyUhLanding extends React.Component {
               </Grid.Column>
 
               <Grid.Column width={10}>
-                <Header as='h1' inverted>
+                <Header as='h1' inverted style={font}>
                   Registered Independent Organizations
                 </Header>
-                <Header as='h3' inverted>
+                <Header as='h3' inverted style={font}>
                   University of Hawaii at Manoa has more than 200 Registered Independent Organizations.<br/>
                   When it comes to finding one for you, however,
                   it is a hard task to go through every organization!
                   Here, MyUH Club can help you
-                  find "the one" for you.
+                  find &#34;the one&#34; for you.
                 </Header>
               </Grid.Column>
             </Grid.Row>
@@ -42,12 +43,12 @@ class MyUhLanding extends React.Component {
           <Grid textAlign='center'>
             <Grid.Row columns={2}>
               <Grid.Column>
-                <Header as='h2' inverted>What is RIO?</Header>
-                <Header as='h3' inverted textAlign='left'>Registered Independent Organizations (RIOs) "serve the
-                  campus and greater community by
+                <Header as='h2' inverted style={font}>What is RIO?</Header>
+                <Header as='h3' inverted textAlign='left' style={font}>Registered Independent Organizations (RIOs)
+                  &#34;serve the campus and greater community by
                   providing leadership development for students and by promoting community spirit, activism, public
                   service, and social, recreational, and cultural interaction among UHM students, faculty, and
-                  staff." (UH Manoa Website) <br/> Use MyUH Club to search through RIOs! </Header>
+                  staff.&#34; (UH Manoa Website) <br/> Use MyUH Club to search through RIOs! </Header>
 
                 <Button as={Link} to="/search" color='black' size='huge'>
                   <Icon name='search'/>
