@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Item, Header, Loader, Grid, Segment } from 'semantic-ui-react';
+import { Container, Item, Header, Loader, Grid, Segment, Icon } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
@@ -49,7 +49,14 @@ class ClubControlAdmin extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center" inverted>Clubs (Admin)</Header>
+
+          <Header as="h1" textAlign="center" icon inverted>
+            <Icon name="zip" circular inverted color='teal'/> Add/Delete Clubs
+          </Header>
+
+
+          <hr/>
+
           <Grid container centered>
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Add Club</Header>
@@ -70,6 +77,8 @@ class ClubControlAdmin extends React.Component {
               </AutoForm>
             </Grid.Column>
           </Grid>
+
+          <hr/>
           <Grid container centered>
             <Grid.Column>
               <Header as="h2" textAlign="center" inverted>Delete Club</Header>
