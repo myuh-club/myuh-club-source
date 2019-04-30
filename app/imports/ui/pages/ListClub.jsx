@@ -17,7 +17,7 @@ class ListClub extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">Club (Organizer)</Header>
+          <Header as="h2" textAlign="center" inverted>Club (Organizer)</Header>
           <Item.Group divided>
             {this.props.clubs.map((club, index) => <Club key={index} club={club} />)}
           </Item.Group>

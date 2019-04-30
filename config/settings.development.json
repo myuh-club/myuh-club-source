@@ -1,19 +1,34 @@
 {
   "defaultAccounts": [
-
     {
-      "email": "admin@foo.com",
-      "password": "changeme",
+      "email": "nick@admin.com",
+      "password": "ASecurePassword",
+      "role": "admin"
+    },{
+      "email": "quinne@admin.com",
+      "password": "bossBoss",
+      "role": "admin"
+    },{
+      "email": "ronnie@admin.com",
+      "password": "esskeetIT",
+      "role": "admin"
+    },{
+      "email": "yusuke@admin.com",
+      "password": "22Btw",
+      "role": "admin"
+    },{
+      "email": "test@admin.com",
+      "password": "PlsnoHack",
       "role": "admin"
     },
     {
       "email": "org@foo.com",
-      "password": "changeme",
+      "password": "dontchangeme",
       "role": "organizer"
     },
     {
       "email": "john@foo.com",
-      "password": "changeme"
+      "password": "hackerbtw"
     }
   ],
   "defaultClubs": [
@@ -136,16 +151,30 @@
       "location": "anywhere",
       "time": "anytime",
       "description": "Vegan Society at UH Manoa"
+    },
+    {
+      "name": "UH Clubs Club",
+      "type": "Lifestyle",
+      "quantity": 1,
+      "owner": "org@foo.com ",
+      "image": "http://www.hawaii.edu/wp/wp-content/uploads/2015/12/system-seal.jpg",
+      "location": "nowhere",
+      "time": "never",
+      "description": "Our Club is all about the other clubs at UH."
     }
   ],
   "defaultFavorites": [
     {
-      "id": "4TnjCkjzFJirKN7XN",
-      "favorites": ["8SihCYwy2BF62ctN6"]
+      "owner": "admin@foo.com",
+      "favorites": []
     },
     {
-      "id": "St3dc2WLRquhPf547",
-      "favorites": ["8xdWr3GFTdKzQYjZ6"]
+      "owner": "org@foo.com",
+      "favorites": []
+    },
+    {
+      "owner": "john@foo.com",
+      "favorites": []
     }
   ]
 }

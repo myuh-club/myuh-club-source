@@ -8,24 +8,21 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 // import Landing from '../pages/Landing';
 import Landing from '../pages/MyUhLanding';
-import ListStuff from '../pages/ListStuff';
 import ClubControlAdmin from '../pages/ClubControlAdmin';
 import ClubEditAdmin from '../pages/ClubEditAdmin';
+import ClubEditOrg from '../pages/ClubEditOrg';
 import ReportsAdmin from '../pages/ReportsAdmin';
 import AboutUsList from '../pages/AboutUsList';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 import StudentHomepage from '../pages/StudentHomepage';
-import EditStuff from '../pages/EditStuff';
 import AddStuff from '../pages/AddStuff';
 import EditClub from '../pages/EditClub';
-import ListClub from '../pages/ListClub';
+// import ListClub from '../pages/ListClub';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
-import Signup from '../pages/Signup'
-import Register from '../pages/Register';
+import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
 import ReportProblem from '../pages/ReportProblem';
-import LogIn from '../pages/LogIn';
 import Search from '../pages/Search';
 import FavoritesPage from '../pages/FavoritesPage';
 
@@ -49,7 +46,7 @@ class App extends React.Component {
                 <AdminProtectedRoute path="/aR" component={ReportsAdmin}/>
                 <ProtectedRoute path="/reportproblem" component={ReportProblem}/>
                 <ProtectedRoute path="/add" component={AddStuff}/>
-                <ProtectedRoute path="/eC" component={ListClub}/>
+                <ProtectedRoute path="/eC" component={ClubEditOrg}/>
                 <ProtectedRoute path="/edit/:_id" component={EditClub}/>
                 <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
                 <ProtectedRoute path="/signout" component={Signout}/>

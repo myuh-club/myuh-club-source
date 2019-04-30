@@ -2,12 +2,12 @@ import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Item, Header, Loader } from 'semantic-ui-react';
 import { Clubs } from '/imports/api/club/club';
-import ClubItemAdmin from '/imports/ui/components/ClubItemAdmin';
+import ClubItem from '/imports/ui/components/ClubItem';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ClubEditAdmin extends React.Component {
+class ClubEditOrg extends React.Component {
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -17,9 +17,9 @@ class ClubEditAdmin extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center" inverted>Clubs (Admin)</Header>
+          <Header as="h2" textAlign="center" inverted>Club (Organizer)</Header>
           <Item.Group divided>
-            {this.props.clubs.map((club, index) => <ClubItemAdmin key={index} club={club}/>)}
+            {this.props.clubs.map((club, index) => <ClubItem key={index} club={club}/>)}
           </Item.Group>
         </Container>
     );
@@ -27,7 +27,7 @@ class ClubEditAdmin extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ClubEditAdmin.propTypes = {
+ClubEditOrg.propTypes = {
   clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -35,9 +35,9 @@ ClubEditAdmin.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Club documents.
-  const subscription = Meteor.subscribe('ClubAdmin');
+  const subscription = Meteor.subscribe('ClubOrg');
   return {
     clubs: Clubs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ClubEditAdmin);
+})(ClubEditOrg);

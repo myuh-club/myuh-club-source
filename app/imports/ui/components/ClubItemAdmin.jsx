@@ -7,19 +7,21 @@ import { withRouter, Link } from 'react-router-dom';
 class ClubItemAdmin extends React.Component {
 
   render() {
+    const style = { color: '#FFF' };
+    const linkStyle = { float: 'right' };
     return (
-        <Item>
+        <Item style={style}>
           <Item.Content>
-            <Image floated='left' size='small' src={this.props.club.image} />
-            <Item.Header>{this.props.club.name} </Item.Header>
-            <Item.Meta>Meetings: {this.props.club.location} @ {this.props.club.time}</Item.Meta>
-            <Item.Meta>Members: {this.props.club.quantity}</Item.Meta>
-            <Item.Description>
+            <Image floated='left' size='small' src={this.props.club.image}/>
+            <Item.Header style={style}>{this.props.club.name} </Item.Header>
+            <Item.Meta style={style}>Meetings: {this.props.club.location} @ {this.props.club.time}</Item.Meta>
+            <Item.Meta style={style}>Members: {this.props.club.quantity}</Item.Meta>
+            <Item.Description style={style}>
               {this.props.club.description}
             </Item.Description>
           </Item.Content>
-          <Item.Content extra>
-            <Link to={`/edit/${this.props.club._id}`} floated='right'>Edit</Link>
+          <Item.Content>
+            <Link to={`/edit/${this.props.club._id}`} style={linkStyle}>Edit</Link>
           </Item.Content>
         </Item>
     );

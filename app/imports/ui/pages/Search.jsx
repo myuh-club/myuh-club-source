@@ -46,7 +46,7 @@ class Search extends React.Component {
           function () {
             console.log(this.state.currentlySelected);
           }
-      );x
+      );
     }
     this.state.ids.map((id) => console.log(document.getElementById(id).checked));
     /*
