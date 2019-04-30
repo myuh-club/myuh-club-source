@@ -18,16 +18,16 @@ class ReportsAdmin extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">Report Tickets</Header>
+          <Header as="h2" textAlign="center" inverted>Report Tickets</Header>
           <Grid columns={2}>
             <Grid.Column>
-              <Header as="h3" textAlign="center">Awaiting Investigation</Header>
+              <Header as="h3" textAlign="center" inverted>Awaiting Investigation</Header>
               <Item.Group divided>
                 {this.props.areports.map((report, index) => <ReportAdmin key={index} report={report}/>)}
               </Item.Group>
             </Grid.Column>
             <Grid.Column>
-              <Header as="h3" textAlign="center">Under Investigation</Header>
+              <Header as="h3" textAlign="center" inverted>Under Investigation</Header>
               <Item.Group divided>
                 {this.props.ireports.map((report, index) => <ReportInvestigationAdmin key={index} report={report}/>)}
               </Item.Group>

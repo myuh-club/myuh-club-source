@@ -29,18 +29,19 @@ class ReportAdmin extends React.Component {
 
   render() {
     const option = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    const style = { color: '#FFF' };
     return (
         <Item>
           <Item.Content>
-            <Item.Header>{this.props.report.title} </Item.Header>
-            <Item.Meta>{this.props.report.owner}</Item.Meta>
-            <Item.Meta> {this.props.report.time.toLocaleDateString('en-US', option)}</Item.Meta>
-            <Item.Description>
+            <Item.Header style={style}>{this.props.report.title} </Item.Header>
+            <Item.Meta style={style}>{this.props.report.owner}</Item.Meta>
+            <Item.Meta style={style}> {this.props.report.time.toLocaleDateString('en-US', option)}</Item.Meta>
+            <Item.Description style={style}>
               {this.props.report.message}
             </Item.Description>
           </Item.Content>
           <Item.Content extra>
-            <Button onClick={this.onClick}>Resolve</Button>
+            <Button onClick={this.onClick} floated='right'>Resolve</Button>
         </Item.Content>
         </Item>
     );

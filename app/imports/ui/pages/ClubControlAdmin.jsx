@@ -49,10 +49,10 @@ class ClubControlAdmin extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">Clubs (Admin)</Header>
+          <Header as="h2" textAlign="center" inverted>Clubs (Admin)</Header>
           <Grid container centered>
             <Grid.Column>
-              <Header as="h2" textAlign="center">Add Club</Header>
+              <Header as="h2" textAlign="center" inverted>Add Club</Header>
               <AutoForm ref={(ref) => {
                 this.formRef = ref;
               }} schema={ClubSchema} onSubmit={this.submit}>
@@ -70,12 +70,16 @@ class ClubControlAdmin extends React.Component {
               </AutoForm>
             </Grid.Column>
           </Grid>
-          <Header as="h2" textAlign="center">Delete Club</Header>
-          <Segment>
-            <Item.Group divided>
-              {this.props.clubs.map((club, index) => <ClubADAdmin key={index} club={club}/>)}
-            </Item.Group>
-          </Segment>
+          <Grid container centered>
+            <Grid.Column>
+              <Header as="h2" textAlign="center" inverted>Delete Club</Header>
+              <Segment>
+                <Item.Group divided>
+                  {this.props.clubs.map((club, index) => <ClubADAdmin key={index} club={club}/>)}
+                </Item.Group>
+              </Segment>
+            </Grid.Column>
+          </Grid>
         </Container>
     );
   }

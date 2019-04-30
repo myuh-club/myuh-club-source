@@ -31,8 +31,8 @@ class ClubItemAdmin extends React.Component {
           <Item.Content>
             <Item.Header>{this.props.club.name} </Item.Header>
           </Item.Content>
-          <Item.Content extra>
-            <Button onClick={this.onClick}>Delete</Button>
+          <Item.Content>
+            <Button onClick={this.onClick} floated='right'>Delete</Button>
           </Item.Content>
         </Item>
     );
