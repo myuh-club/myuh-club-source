@@ -36,11 +36,17 @@ class Club extends React.Component {
   }
 
   iconColor() {
-    return (this.isFavorited()) ? 'white' : 'gray';
+    if (this.isFavorited()) {
+      return 'yellow';
+    }
+    return;
   }
 
   buttonColor() {
-    return (this.isFavorited()) ? 'green' : 'gray';
+    if (this.isFavorited()) {
+      return 'green';
+    }
+    return;
   }
 
   render() {
