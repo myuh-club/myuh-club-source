@@ -11,18 +11,18 @@ import { Favorites } from '/imports/api/favorite/favorite';
 class Search extends React.Component {
 
   selectAll() {
-    this.state.ids.map((id) => function(id) {
-        const prevState = {...this.state.document.getElementById(id)};
-        prevState.checked = true;
-        this.setState({prevState});
+    this.state.ids.map((id) => function (id) {
+      const prevState = { ...this.state.document.getElementById(id) };
+      prevState.checked = true;
+      this.setState({ prevState });
     });
   }
 
   removeAll() {
-    this.state.ids.map((id) => function(id) {
-      const prevState = {...this.state.document.getElementById(id)};
+    this.state.ids.map((id) => function (id) {
+      const prevState = { ...this.state.document.getElementById(id) };
       prevState.checked = false;
-      this.setState({prevState});
+      this.setState({ prevState });
     });
   }
 
@@ -31,11 +31,11 @@ class Search extends React.Component {
     const checkedObjects = [];
     //Adds checked ids to "checked" array
     this.state.ids.map(
-        (id) =>(document.getElementById(id).checked ? checked.push(document.getElementById(id).id) : null),
+        (id) => (document.getElementById(id).checked ? checked.push(document.getElementById(id).id) : null),
     );
     //Adds checked types to "checkedObjects" array
     checked.map(
-        (type) => (checkedObjects.push({"type": type}))
+        (type) => (checkedObjects.push({ "type": type }))
     );
     const filter = [];
     checkedObjects.map((obj) => filter.push(obj));
@@ -48,13 +48,6 @@ class Search extends React.Component {
           }
       );
     }
-    this.state.ids.map((id) => console.log(document.getElementById(id).checked));
-    /*
-    console.log('Checked:');
-    console.log(checked);
-    console.log('Checked Objects: ');
-    console.log(checkedObjects);
-    */
   }
 
   render() {
@@ -164,10 +157,10 @@ class Search extends React.Component {
                     </Table.Cell>
                     <Table.Cell>
                       <Checkbox
-                        id={'Sports'}
-                        defaultChecked
-                        toggle
-                        label={'Sports'}
+                          id={'Sports'}
+                          defaultChecked
+                          toggle
+                          label={'Sports'}
                       />
                     </Table.Cell>
                     <Table.Cell>
@@ -192,14 +185,15 @@ class Search extends React.Component {
           <Grid verticalAlign='middle' textAlign='center' columns={4} padded container>
             <Card.Group>
               {this.state.currentlySelected.map((club) => <Club
-                key={club._id}
-                club={club}
+                  key={club._id}
+                  club={club}
               />)}
             </Card.Group>
           </Grid>
         </Container>
     );
   }
+
   constructor(props) {
     super(props);
     this.state = {
@@ -215,7 +209,7 @@ class Search extends React.Component {
         'Service',
         'Sports',
         'Student Affairs'],
-      currentlySelected: []
+      currentlySelected: this.props.clubs
     };
     this.selectAll = this.selectAll.bind(this);
     this.removeAll = this.removeAll.bind(this);
@@ -229,7 +223,6 @@ Search.propTypes = {
   clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
-
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {

@@ -25,10 +25,3 @@ Meteor.publish('Favorites', function publish() {
   return this.ready();
 });
 
-/** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
-Meteor.publish('FavoritesAdmin', function publish() {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Clubs.find();
-  }
-  return this.ready();
-});

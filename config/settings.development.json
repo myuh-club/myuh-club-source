@@ -165,7 +165,23 @@
   ],
   "defaultFavorites": [
     {
-      "owner": "admin@foo.com",
+      "owner": "nick@admin.com",
+      "favorites": []
+    },
+    {
+      "owner": "quinne@admin.com",
+      "favorites": []
+    },
+    {
+      "owner": "ronnie@admin.com",
+      "favorites": []
+    },
+    {
+      "owner": "yusuke@admin.com",
+      "favorites": []
+    },
+    {
+      "owner": "test@admin.com",
       "favorites": []
     },
     {
