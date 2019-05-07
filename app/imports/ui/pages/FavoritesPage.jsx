@@ -11,13 +11,13 @@ import { Favorites } from '/imports/api/favorite/favorite';
 class FavoritesPage extends React.Component {
 
   componentWillMount() {
-    if (Favorites.find().fetch().length != 0) {
+    if (Favorites.find().fetch().length !== 0) {
       this.setState({favorites: Favorites.find().fetch()[0].favorites}, () => '');
     }
   }
 
   componentDidMount() {
-    if (Favorites.find().fetch().length != 0) {
+    if (Favorites.find().fetch().length !== 0) {
       this.setState({favorites: Favorites.find().fetch()[0].favorites}, () => '');
     }
   }
@@ -28,11 +28,11 @@ class FavoritesPage extends React.Component {
 
   renderPage() {
     return (
-        <Container>
+        <Container textAlign='center'>
           <Header as="h1" textAlign="center" icon inverted>
             <Icon name="star" circular inverted color='teal'/> Favorites
           </Header>
-          {(this.state.favorites.length != 0) ?
+          {(this.state.favorites.length !== 0) ?
             <Card.Group>
               {this.state.favorites.map((club) => <Club
                   key={club}

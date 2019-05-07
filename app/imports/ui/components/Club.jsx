@@ -51,7 +51,7 @@ class Club extends React.Component {
 
   render() {
     return (
-        <Card>
+        <Card centered>
           <Card.Content>
             <Image circular centered size='small' src={this.props.club.image}/>
             <Card.Header>
