@@ -1,6 +1,5 @@
 import React from 'react';
 import { Header, Card, Icon } from 'semantic-ui-react';
-import { withTracker } from 'meteor/react-meteor-data';
 import AboutUs from '/imports/ui/components/AboutUs';
 
 /** Renders a section for each developer */
@@ -24,7 +23,7 @@ class AboutUsList extends React.Component {
     },
     {
       firstName: ' Nicholas ',
-      lastName: 'Miyamoto-Pennywell',
+      lastName: 'M-P',
       image: 'https://avatars2.githubusercontent.com/u/31229605?s=400&v=4',
       description: 'Nicholas is a Computer Science student at UH Manoa.',
       email: 'nkmp@hawaii.edu',
@@ -64,7 +63,4 @@ class AboutUsList extends React.Component {
 /* the rest of codes are not necessary */
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-export default withTracker(() => {
-  return {
-  };
-})(AboutUsList);
+export default AboutUsList;
