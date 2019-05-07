@@ -1,5 +1,4 @@
 import { Meteor } from 'meteor/meteor';
-import { Roles } from 'meteor/alanning:roles';
 import { Favorites } from '../../api/favorite/favorite.js';
 
 /** Initialize the database with a default data document. */
@@ -24,4 +23,3 @@ Meteor.publish('Favorites', function publish() {
   }
   return this.ready();
 });
-

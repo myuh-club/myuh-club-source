@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Form, Button, Input, Header, Grid } from 'semantic-ui-react';
-import { Menu } from 'semantic-ui-react/dist/commonjs/collections/Menu';
 
-export default class LogIn extends React.Component{
+export default class LogIn extends React.Component {
 
-  render(){
-    return(
+  render() {
+    return (
         <div className="myuhclub-landing-background-right">
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
@@ -29,6 +28,6 @@ export default class LogIn extends React.Component{
           </Grid>
         </div>
 
-    )
+    );
   }
 }

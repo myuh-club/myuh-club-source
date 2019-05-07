@@ -1,14 +1,9 @@
 import React from 'react';
 import { Grid, Icon, Header, Button, Image, Container } from 'semantic-ui-react';
 import { withRouter, Link } from 'react-router-dom';
-import { Menu } from 'semantic-ui-react/dist/commonjs/collections/Menu';
-
 import PropTypes from 'prop-types';
 import { Meteor } from 'meteor/meteor';
 import { withTracker } from 'meteor/react-meteor-data';
-import { Roles } from 'meteor/alanning:roles';
-
-import { Clubs } from '/imports/api/club/club';
 
 /** A simple static component to render some text for the landing page. */
 class MyUhLanding extends React.Component {
