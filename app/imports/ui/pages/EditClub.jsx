@@ -7,6 +7,7 @@ import LongTextField from 'uniforms-semantic/LongTextField';
 import NumField from 'uniforms-semantic/NumField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
+import SelectField from 'uniforms-semantic/SelectField';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -43,6 +44,7 @@ class EditClub extends React.Component {
                   <TextField name='location'/>
                   <TextField name='time'/>
                   <LongTextField name='description'/>
+                  <SelectField name='type'/>
                   <NumField name='quantity' decimal={false}/>
                   <TextField name='owner'/>
                   <SubmitField value='Submit'/>
