@@ -6,7 +6,6 @@ import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
 import NumField from 'uniforms-semantic/NumField';
 import SubmitField from 'uniforms-semantic/SubmitField';
-import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -17,8 +16,8 @@ import { Bert } from 'meteor/themeteorchef:bert';
 class EditClub extends React.Component {
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, quantity, image, time, location, description, _id } = data;
-    Clubs.update(_id, { $set: { name, quantity, image, time, location, description } }, (error) => (error ?
+    const { name, quantity, image, time, location, description, owner, _id } = data;
+    Clubs.update(_id, { $set: { name, quantity, image, time, location, description, owner } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
@@ -45,9 +44,9 @@ class EditClub extends React.Component {
                   <TextField name='time'/>
                   <LongTextField name='description'/>
                   <NumField name='quantity' decimal={false}/>
+                  <TextField name='owner'/>
                   <SubmitField value='Submit'/>
                   <ErrorsField/>
-                  <HiddenField name='owner' value='fakeuser@foo.com'/>
                 </Segment>
               </AutoForm>
             </Grid.Column>

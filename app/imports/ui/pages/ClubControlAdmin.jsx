@@ -6,8 +6,8 @@ import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
 import NumField from 'uniforms-semantic/NumField';
 import SubmitField from 'uniforms-semantic/SubmitField';
-import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
+import SelectField from 'uniforms-semantic/SelectField';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
 import ClubADAdmin from '/imports/ui/components/ClubADAdmin';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -35,9 +35,8 @@ class ClubControlAdmin extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { name, quantity, image, time, location, description } = data;
-    const owner = Meteor.user().username;
-    Clubs.insert({ name, quantity, image, time, location, description, owner }, this.insertCallback);
+    const { name, quantity, image, time, location, description, owner, type } = data;
+    Clubs.insert({ name, quantity, image, time, location, description, type, owner }, this.insertCallback);
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -57,15 +56,16 @@ class ClubControlAdmin extends React.Component {
                 this.formRef = ref;
               }} schema={ClubSchema} onSubmit={this.submit}>
                 <Segment>
-                  <TextField name='name'/>
-                  <TextField name='image'/>
-                  <TextField name='location'/>
-                  <TextField name='time'/>
-                  <LongTextField name='description'/>
-                  <NumField name='quantity' decimal={false}/>
+                  <TextField name='name' placeholder='Club Name'/>
+                  <TextField name='image' placeholder='Club Logo'/>
+                  <TextField name='location' placeholder='Club Room'/>
+                  <TextField name='time' placeholder='Meeting Time'/>
+                  <LongTextField name='description' placeholder='Club Description'/>
+                  <SelectField name='type'/>
+                  <NumField name='quantity' placeholder='Number of members' decimal={false}/>
+                  <TextField name='owner' placeholder='unassigned@foo.com'/>
                   <SubmitField value='Submit'/>
                   <ErrorsField/>
-                  <HiddenField name='owner' value='fakeuser@foo.com'/>
                 </Segment>
               </AutoForm>
             </Grid.Column>
