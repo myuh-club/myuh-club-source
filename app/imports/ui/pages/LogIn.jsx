@@ -1,6 +1,6 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
-import { Container, Form, Checkbox, Button, Input, Header, Grid } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
+import { Container, Form, Button, Input, Header, Grid } from 'semantic-ui-react';
 import { Menu } from 'semantic-ui-react/dist/commonjs/collections/Menu';
 
 export default class LogIn extends React.Component{

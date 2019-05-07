@@ -6,7 +6,7 @@ import ClubItem from '/imports/ui/components/ClubItem';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders a component to edit a club */
 class ClubEditOrg extends React.Component {
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -26,7 +26,7 @@ class ClubEditOrg extends React.Component {
   }
 }
 
-/** Require an array of Stuff documents in the props. */
+/** Require an array of Clubs documents in the props. */
 ClubEditOrg.propTypes = {
   clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,

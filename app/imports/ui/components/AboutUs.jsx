@@ -1,8 +1,7 @@
 import React from 'react';
-import { Table, Card, Image, Header, Grid } from 'semantic-ui-react';
+import { Card, Image } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
-import people from '../pages/AboutUsList'
+import { withRouter } from 'react-router-dom';
 
 
 /** Taken from Contacts */

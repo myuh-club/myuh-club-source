@@ -56,7 +56,7 @@ class EditClub extends React.Component {
     );
   }
 }
-/** Require an array of Stuff documents in the props. */
+/** Require an array of ClubAdmin documents in the props. */
 EditClub.propTypes = {
           doc: PropTypes.object,
           model: PropTypes.object,
