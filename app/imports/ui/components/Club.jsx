@@ -87,9 +87,11 @@ class Club extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      userFavorites: Favorites.findOne({ "owner": Meteor.user().username }).favorites
-    };
+    if (Meteor.user()) {
+      this.state = {
+        userFavorites: Favorites.findOne({ "owner": Meteor.user().username }).favorites
+      };
+    }
     this.onClick = this.onClick.bind(this);
     this.isFavorited = this.isFavorited.bind(this);
     this.iconColor = this.iconColor.bind(this);
