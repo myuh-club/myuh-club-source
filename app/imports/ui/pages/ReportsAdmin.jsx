@@ -42,7 +42,7 @@ class ReportsAdmin extends React.Component {
   }
 }
 
-/** Require an array of Stuff documents in the props. */
+/** Require an array of Club documents in the props. */
 ReportsAdmin.propTypes = {
   areports: PropTypes.array.isRequired,
   ireports: PropTypes.array.isRequired,

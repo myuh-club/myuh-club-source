@@ -14,7 +14,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Bert } from 'meteor/themeteorchef:bert';
 
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+/** Renders two components: one to edit a club and one to delete a club */
 class ClubControlAdmin extends React.Component {
   constructor(props) {
     super(props);
@@ -94,7 +94,7 @@ class ClubControlAdmin extends React.Component {
   }
 }
 
-/** Require an array of Stuff documents in the props. */
+/** Require an array of Clubs documents in the props. */
 ClubControlAdmin.propTypes = {
   clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,

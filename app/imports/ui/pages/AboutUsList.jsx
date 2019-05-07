@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Header, Loader, Card, Icon } from 'semantic-ui-react';
+import { Header, Card, Icon } from 'semantic-ui-react';
 import { withTracker } from 'meteor/react-meteor-data';
-import PropTypes from 'prop-types';
 import AboutUs from '/imports/ui/components/AboutUs';
 
 /** Renders a section for each developer */
@@ -64,9 +63,6 @@ class AboutUsList extends React.Component {
 }
 
 /* the rest of codes are not necessary */
-/** Require an array of Stuff documents in the props. */
-AboutUsList.propTypes = {
-};
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
