@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid, Icon, Header, Button, Image, Container, Card } from 'semantic-ui-react';
-import { NavLink, withRouter, Link } from 'react-router-dom';
+import { Grid, Icon, Header, Button, Image, Container } from 'semantic-ui-react';
+import { withRouter, Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react/dist/commonjs/collections/Menu';
 
 import PropTypes from 'prop-types';

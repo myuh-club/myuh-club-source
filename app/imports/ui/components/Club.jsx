@@ -1,12 +1,12 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Card, Image, Button, Icon, Checkbox } from 'semantic-ui-react';
+import { Card, Image, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
 import { Favorites, FavoriteSchema } from '/imports/api/favorite/favorite';
-import { withRouter, Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
-/** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
+/** Renders a single Club Card */
 class Club extends React.Component {
 
   onClick(id) {

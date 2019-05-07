@@ -4,7 +4,7 @@ import { Clubs } from '/imports/api/club/club';
 import PropTypes from 'prop-types';
 import { Bert } from 'meteor/themeteorchef:bert';
 
-/** Renders a single row in the List Stuff (Admin) table. See pages/ListStuffAdmin.jsx. */
+/** Renders a single row component for EditClub */
 class ClubItemAdmin extends React.Component {
 
   constructor(props) {

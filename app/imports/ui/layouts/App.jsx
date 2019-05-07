@@ -8,18 +8,13 @@ import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-// import Landing from '../pages/Landing';
 import Landing from '../pages/MyUhLanding';
 import ClubControlAdmin from '../pages/ClubControlAdmin';
 import ClubEditAdmin from '../pages/ClubEditAdmin';
 import ClubEditOrg from '../pages/ClubEditOrg';
 import ReportsAdmin from '../pages/ReportsAdmin';
 import AboutUsList from '../pages/AboutUsList';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
-import StudentHomepage from '../pages/StudentHomepage';
-import AddStuff from '../pages/AddStuff';
 import EditClub from '../pages/EditClub';
-// import ListClub from '../pages/ListClub';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -47,10 +42,8 @@ class App extends React.Component {
                 <AdminProtectedRoute path="/aD" component={ClubControlAdmin}/>
                 <AdminProtectedRoute path="/aR" component={ReportsAdmin}/>
                 <ProtectedRoute path="/reportproblem" component={ReportProblem}/>
-                <ProtectedRoute path="/add" component={AddStuff}/>
                 <ProtectedRoute path="/eC" component={ClubEditOrg}/>
                 <ProtectedRoute path="/edit/:_id" component={EditClub}/>
-                <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
                 <ProtectedRoute path="/signout" component={Signout}/>
                 <Route component={NotFound}/>
               </Switch>

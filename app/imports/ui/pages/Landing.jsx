@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Icon, Header, Button, List } from 'semantic-ui-react';
-import { NavLink, withRouter, Link } from 'react-router-dom';
+import {  Link } from 'react-router-dom';
 import { Menu } from 'semantic-ui-react/dist/commonjs/collections/Menu';
 
 
