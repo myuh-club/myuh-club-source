@@ -1,7 +1,5 @@
 import React from 'react';
 import { Grid, Segment, Feed, Button } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
-import { withRouter, Link } from 'react-router-dom';
 
 export default class StudentHomepage extends React.Component {
   state = { activeItem: 'Home' }
@@ -54,7 +52,7 @@ export default class StudentHomepage extends React.Component {
                     </Feed.Label>
                     <Feed.Content>
                       <Feed.Summary>
-                        <Feed.User>Nicholas Miyamoto-Pennywell</Feed.User> added a new club 'SWE'.
+                        <Feed.User>Nicholas Miyamoto-Pennywell</Feed.User> added a new club &#39SWE&#39.
                         <Feed.Date>10 Hour Ago</Feed.Date>
                       </Feed.Summary>
                     </Feed.Content>
@@ -75,10 +73,10 @@ export default class StudentHomepage extends React.Component {
             </Grid.Column>
           </Grid>
         </div>
-    )
+    );
   }
 }
 
-//https://stackoverflow.com/questions/52392725/changing-segment-content-onpress
+// https://stackoverflow.com/questions/52392725/changing-segment-content-onpress
 //             Figure out a way to get this box to change based on what Menu.Item is clicked.
 //              For now it will be configured to the dashboard.

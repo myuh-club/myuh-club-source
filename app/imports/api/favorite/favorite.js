@@ -9,7 +9,7 @@ const Favorites = new Mongo.Collection('Favorites');
 const FavoriteSchema = new SimpleSchema({
   owner: String,
   favorites: Array,
-  'favorites.$': String
+  'favorites.$': String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

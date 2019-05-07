@@ -5,7 +5,6 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import { Clubs } from '/imports/api/club/club';
 import Club from '/imports/ui/components/Club';
-import { Favorites } from '/imports/api/favorite/favorite';
 
 /** A simple static component to render some text for the search page. */
 class Search extends React.Component {
@@ -29,24 +28,23 @@ class Search extends React.Component {
   searchClubs() {
     const checked = [];
     const checkedObjects = [];
-    //Adds checked ids to "checked" array
+    // Adds checked ids to "checked" array
     this.state.ids.map(
         (id) => (document.getElementById(id).checked ? checked.push(document.getElementById(id).id) : null),
     );
-    //Adds checked types to "checkedObjects" array
+    // Adds checked types to "checkedObjects" array
     checked.map(
-        (type) => (checkedObjects.push({ "type": type }))
+        (type) => (checkedObjects.push({ "type": type })),
     );
     const filter = [];
     checkedObjects.map((obj) => filter.push(obj));
-    //console.log('filter');
-    //console.log(filter);
+    // console.log('filter');
+    // console.log(filter);
     if (filter.length > 0) {
       this.setState({ currentlySelected: Clubs.find({ $or: filter }).fetch() },
           function () {
             console.log(this.state.currentlySelected);
-          }
-      );
+          });
     }
   }
 
@@ -61,12 +59,12 @@ class Search extends React.Component {
             <Icon name="search" circular inverted color='teal'/> Search
           </Header>
           <Grid verticalAlign='middle' textAlign='center' container className='search-background'>
-            {/*<Grid.Column width={3}>*/}
-            {/*  <Button.Group vertical>*/}
-            {/*    <Button size="huge" positive onClick={this.selectAll}>Select All</Button>*/}
-            {/*    <Button size="huge" negative onClick={this.removeAll}>Remove All</Button>*/}
-            {/*  </Button.Group>*/}
-            {/*</Grid.Column>*/}
+            {/* <Grid.Column width={3}> */}
+            {/*  <Button.Group vertical> */}
+            {/*    <Button size="huge" positive onClick={this.selectAll}>Select All</Button> */}
+            {/*    <Button size="huge" negative onClick={this.removeAll}>Remove All</Button> */}
+            {/*  </Button.Group> */}
+            {/* </Grid.Column> */}
             <Grid.Column width={13}>
               <Table basic='very'>
                 <Table.Body>
@@ -209,7 +207,7 @@ class Search extends React.Component {
         'Service',
         'Sports',
         'Student Affairs'],
-      currentlySelected: this.props.clubs
+      currentlySelected: this.props.clubs,
     };
     this.selectAll = this.selectAll.bind(this);
     this.removeAll = this.removeAll.bind(this);

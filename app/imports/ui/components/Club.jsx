@@ -3,14 +3,14 @@ import { Meteor } from 'meteor/meteor';
 import { Card, Image, Button, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
-import { Favorites, FavoriteSchema } from '/imports/api/favorite/favorite';
+import { Favorites } from '/imports/api/favorite/favorite';
 import { withRouter } from 'react-router-dom';
 
 /** Renders a single Club Card */
 class Club extends React.Component {
 
   onClick(id) {
-    const ownerId = Favorites.findOne({ "owner": Meteor.user().username })._id;
+    const ownerId = Favorites.findOne({ owner: Meteor.user().username })._id;
     if (!this.isFavorited()) {
       console.log(`${Meteor.user().username} favorited ${Clubs.findOne({ _id: id }).name}`);
       Favorites.update({ _id: ownerId }, { $addToSet: { favorites: id } });
@@ -18,12 +18,11 @@ class Club extends React.Component {
       console.log(`${Meteor.user().username} has unfavorited ${Clubs.findOne({ _id: id }).name}`);
       Favorites.update({ _id: ownerId }, { $pull: { favorites: id } });
     }
-    this.setState({ userFavorites: Favorites.findOne({ "owner": Meteor.user().username }).favorites },
+    this.setState({ userFavorites: Favorites.findOne({ owner: Meteor.user().username }).favorites },
         function () {
           console.log(`${Meteor.user().username} has favorited:`);
           this.state.userFavorites.map((favId) => (console.log(Clubs.findOne({ _id: favId }).name)));
-        }
-    );
+        });
     this.forceUpdate();
   }
 
@@ -36,17 +35,19 @@ class Club extends React.Component {
   }
 
   iconColor() {
+    let iColor = '';
     if (this.isFavorited()) {
-      return 'yellow';
+      iColor = 'yellow';
     }
-    return;
+    return iColor;
   }
 
   buttonColor() {
+    let bColor = '';
     if (this.isFavorited()) {
-      return 'green';
+      bColor = 'green';
     }
-    return;
+    return bColor;
   }
 
   render() {
@@ -70,7 +71,7 @@ class Club extends React.Component {
                   color={this.buttonColor()}
                   schema={ClubSchema}
                   onClick={() => {
-                    this.onClick(this.props.club._id)
+                    this.onClick(this.props.club._id);
                   }}
               >
                 <Icon
@@ -89,8 +90,7 @@ class Club extends React.Component {
     super(props);
     if (Meteor.user()) {
       this.state = {
-        userFavorites: Favorites.findOne({ "owner": Meteor.user().username }).favorites
-      };
+        userFavorites: Favorites.findOne({ owner: Meteor.user().username }).favorites };
     }
     this.onClick = this.onClick.bind(this);
     this.isFavorited = this.isFavorited.bind(this);
