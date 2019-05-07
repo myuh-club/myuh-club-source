@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Form, Checkbox, Button, Input, Header, Grid } from 'semantic-ui-react';
-import { Accounts } from 'meteor/accounts-base';
 
-export default class Register extends React.Component{
+export default class Register extends React.Component {
 
-  render(){
-    return(
+  render() {
+    return (
         <div>
           <Grid textAlign="center" verticalAlign="middle" centered columns={2}>
             <Grid.Column>
@@ -32,7 +31,6 @@ export default class Register extends React.Component{
          </Grid>
         </div>
 
-    )
+    );
   }
 }
-

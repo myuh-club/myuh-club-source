@@ -12,13 +12,13 @@ class FavoritesPage extends React.Component {
 
   componentWillMount() {
     if (Favorites.find().fetch().length !== 0) {
-      this.setState({favorites: Favorites.find().fetch()[0].favorites}, () => '');
+      this.setState({ favorites: Favorites.find().fetch()[0].favorites }, () => '');
     }
   }
 
   componentDidMount() {
     if (Favorites.find().fetch().length !== 0) {
-      this.setState({favorites: Favorites.find().fetch()[0].favorites}, () => '');
+      this.setState({ favorites: Favorites.find().fetch()[0].favorites }, () => '');
     }
   }
 
@@ -45,12 +45,13 @@ class FavoritesPage extends React.Component {
         </Container>
     );
   }
+
   constructor(props) {
     super(props);
     this.renderPage = this.renderPage.bind(this);
 
     this.state = {
-      favorites: []
+      favorites: [],
     };
 
   }
